@@ -29,3 +29,63 @@ Our mission is to empower learners through practical and technology-driven educa
 
 ## 🧩 Website Structure
 
+---
+
+## 🚀 Features
+
+- Responsive institute website
+- GitHub Pages hosting
+- Multi-page layout
+- Admission inquiry page
+- Education branding
+- Mobile friendly design
+
+---
+
+## 🎯 Target Learners
+
+- School & college students
+- Technical learners
+- Vocational trainees
+- Skill development candidates
+- IT beginners
+
+---
+
+## 📍 Location
+
+Bangalore,Karnataka — India
+
+---
+
+## 📞 Contact
+
+Phone: 7654270021  
+Email: mithlesh.addhyan.kendram@gmail.com
+
+---
+
+## 🏷 Tagline
+
+**Empowering Knowledge Through Technology**
+
+---
+
+## 🔮 Upcoming Additions
+
+- Student project showcase
+- Certificate verification system
+- Online admission tracking
+- Course materials repository
+- Learning tools & datasets
+
+---
+
+## 🤝 Contributions
+
+Student projects and educational tools will be added here regularly.
+
+---
+
+© Mithilesh Addhyan Kendram
+
