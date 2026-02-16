@@ -14,6 +14,53 @@ body{
   color:#333;
 }
 
+/* ===== PASTE HERE ===== */
+
+/* HERO BANNER */
+.hero{
+  background:url('banner.png') center/cover no-repeat;
+  height:420px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  position:relative;
+}
+
+/* Dark overlay for readability */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+}
+
+/* Content stays above overlay */
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+
+.hero h1{
+  font-size:42px;
+  margin:0;
+}
+
+.hero p{
+  font-size:18px;
+  margin-top:10px;
+}
+
+/* LOGO */
+.logo{
+  width:95px;
+  margin-bottom:15px;
+}
+
+/* ===== CONTINUE YOUR OLD CSS BELOW ===== */
+
 /* HEADER */
 header{
   background:linear-gradient(120deg,#0b7a2a,#16a34a);
@@ -106,11 +153,19 @@ footer{
 
 <body>
 
-<header>
+<header class="hero">
+
+<div class="hero-content">
+<img src="logo.png" class="logo" alt="Logo">
+
 <h1>Mithilesh Addhyan Kendram</h1>
 <p>Empowering Knowledge Through Technology</p>
+
 <a href="careers.html" class="btn">Explore Careers</a>
+</div>
+
 </header>
+
 
 <nav>
 <a href="#about">About</a>
