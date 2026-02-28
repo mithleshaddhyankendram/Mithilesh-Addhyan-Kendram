@@ -1,224 +1,291 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mithilesh Addhyan Kendram</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
 body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#f4f7fb;
-  color:#333;
+background:#f4f8ff;
+color:#333;
 }
 
-/* ===== PASTE HERE ===== */
-
-/* HERO BANNER */
-.hero{
-  background:url('banner.png') center/cover no-repeat;
-  height:420px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-  position:relative;
-}
-
-/* Dark overlay for readability */
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.55);
-}
-
-/* Content stays above overlay */
-.hero-content{
-  position:relative;
-  z-index:2;
-}
-
-.hero h1{
-  font-size:42px;
-  margin:0;
-}
-
-.hero p{
-  font-size:18px;
-  margin-top:10px;
-}
-
-/* LOGO */
-.logo{
-  width:95px;
-  margin-bottom:15px;
-}
-
-/* ===== CONTINUE YOUR OLD CSS BELOW ===== */
-
-/* HEADER */
 header{
-  background:linear-gradient(120deg,#0b7a2a,#16a34a);
-  color:white;
-  text-align:center;
-  padding:70px 20px;
-}
-
-header h1{margin:0;font-size:40px}
-header p{font-size:18px;margin-top:10px}
-
-/* NAVBAR */
-nav{
-  background:#064d1a;
-  padding:14px;
-  text-align:center;
+background:#0d6efd;
+color:white;
+padding:20px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 nav a{
-  color:white;
-  margin:0 18px;
-  text-decoration:none;
-  font-weight:500;
-  transition:.3s;
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:500;
 }
 
-nav a:hover{color:#9ae6b4}
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(to right,#0d6efd,#4e9bff);
+color:white;
+padding:20px;
+}
 
-/* SECTION */
+.hero h1{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:25px;
+}
+
+.btn{
+background:white;
+color:#0d6efd;
+padding:12px 25px;
+border-radius:25px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#e6f0ff;
+}
+
 section{
-  padding:50px 20px;
-  max-width:1100px;
-  margin:auto;
+padding:70px 20px;
+text-align:center;
 }
 
 h2{
-  text-align:center;
-  color:#0b7a2a;
-  margin-bottom:30px;
+margin-bottom:30px;
+color:#0d6efd;
 }
 
-/* CARD GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
+.services,.courses{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
 }
 
 .card{
-  background:white;
-  padding:25px;
-  border-radius:12px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.08);
-  transition:.3s;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+width:280px;
+transition:0.3s;
 }
 
 .card:hover{
-  transform:translateY(-6px);
+transform:translateY(-5px);
 }
 
-/* BUTTON */
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 22px;
-  background:#16a34a;
-  color:white;
-  text-decoration:none;
-  border-radius:6px;
-  font-weight:500;
+.contact input,.contact textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
+border-radius:5px;
+border:1px solid #ccc;
 }
 
-/* CONTACT */
-.contact{
-  text-align:center;
-  font-size:18px;
-  line-height:1.8;
+.contact button{
+background:#0d6efd;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:5px;
+cursor:pointer;
 }
 
-/* FOOTER */
 footer{
-  background:#111;
-  color:white;
-  text-align:center;
-  padding:25px;
-  margin-top:40px;
+background:#0d6efd;
+color:white;
+padding:20px;
+margin-top:30px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
+}
+
+.chatbox{
+position:fixed;
+bottom:90px;
+right:20px;
+width:300px;
+background:white;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+display:none;
+flex-direction:column;
+}
+
+.chat-header{
+background:#0d6efd;
+color:white;
+padding:10px;
+border-radius:10px 10px 0 0;
+}
+
+.chat-body{
+padding:10px;
+height:200px;
+overflow-y:auto;
+font-size:14px;
+}
+
+.chat-input{
+display:flex;
+}
+
+.chat-input input{
+flex:1;
+padding:8px;
+border:none;
+border-top:1px solid #ccc;
+}
+
+.chat-input button{
+background:#0d6efd;
+color:white;
+border:none;
+padding:8px 12px;
+cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<header class="hero">
-
-<div class="hero-content">
-<img src="logo.png" class="logo" alt="Logo">
-
+<header>
 <h1>Mithilesh Addhyan Kendram</h1>
-<p>Empowering Knowledge Through Technology</p>
-
-<a href="careers.html" class="btn">Explore Careers</a>
-</div>
-
-</header>
-
-
 <nav>
 <a href="#about">About</a>
 <a href="#services">Services</a>
 <a href="#courses">Courses</a>
 <a href="#contact">Contact</a>
-<a href="careers.html">Careers</a>
 </nav>
+</header>
+
+<div class="hero">
+<h1>Empowering Students Through Technology</h1>
+<p>Website Development | Internship Training | Final Year Projects</p>
+<a href="#contact" class="btn">Get Started</a>
+</div>
 
 <section id="about">
 <h2>About Us</h2>
-<div class="card">
-<p>
-Mithilesh Addhyan Kendram is a modern education and skill development institute
-focused on providing practical learning, vocational training, and career-ready
-technical knowledge for students and freshers.
-</p>
-</div>
+<p>Mithilesh Addhyan Kendram provides professional website development, student internship training, and final year project guidance with real-world practical learning.</p>
 </section>
 
 <section id="services">
 <h2>Our Services</h2>
-<div class="grid">
-<div class="card">Technical Education Support</div>
-<div class="card">Vocational Training Programs</div>
-<div class="card">Online Learning Assistance</div>
-<div class="card">Exam Preparation Guidance</div>
-<div class="card">Student Skill Development</div>
+<div class="services">
+<div class="card">
+<h3>Website Development</h3>
+<p>Modern and responsive websites for businesses and startups.</p>
+</div>
+<div class="card">
+<h3>Internship Training</h3>
+<p>Hands-on training in React, Java, Spring Boot & MySQL.</p>
+</div>
+<div class="card">
+<h3>Final Year Projects</h3>
+<p>Complete guidance with real implementation and explanation.</p>
+</div>
 </div>
 </section>
 
 <section id="courses">
-<h2>Courses Offered</h2>
-<div class="grid">
-<div class="card">Computer Basics</div>
-<div class="card">Data & IT Fundamentals</div>
-<div class="card">Web Development Foundation</div>
-<div class="card">Skill Development Programs</div>
+<h2>Our Courses</h2>
+<div class="courses">
+<div class="card">
+<h3>Full Stack Development</h3>
+<p>React + Spring Boot + MySQL</p>
+</div>
+<div class="card">
+<h3>Java Programming</h3>
+<p>Core & Advanced Java Concepts</p>
+</div>
+<div class="card">
+<h3>Web Fundamentals</h3>
+<p>HTML, CSS, JavaScript Basics</p>
+</div>
 </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="contact">
 <h2>Contact Us</h2>
-<div class="card contact">
-📍 Bangalore - 560029, Karnataka, India<br>
-📞 7654270021<br>
-✉️ mithlesh.addhyan.kendram@gmail.com
-</div>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="4" placeholder="Your Message"></textarea>
+<button onclick="sendMessage()">Send Message</button>
 </section>
 
 <footer>
-© 2026 Mithilesh Addhyan Kendram — All Rights Reserved
+<p>© 2026 Mithilesh Addhyan Kendram | All Rights Reserved</p>
 </footer>
+
+<a href="https://wa.me/917654270021" class="whatsapp" target="_blank">💬</a>
+
+<div class="chatbox" id="chatbox">
+<div class="chat-header">MAK Chat Support</div>
+<div class="chat-body" id="chatBody">
+Hello 👋 How can we help you?
+</div>
+<div class="chat-input">
+<input type="text" id="chatInput" placeholder="Type message...">
+<button onclick="sendChat()">Send</button>
+</div>
+</div>
+
+<script>
+function sendMessage(){
+alert("Thank you! We will contact you soon.");
+}
+
+function sendChat(){
+let input=document.getElementById("chatInput").value;
+let body=document.getElementById("chatBody");
+body.innerHTML+="<br><b>You:</b> "+input;
+document.getElementById("chatInput").value="";
+}
+
+document.querySelector(".whatsapp").addEventListener("dblclick",function(){
+document.getElementById("chatbox").style.display="flex";
+});
+</script>
 
 </body>
 </html>
