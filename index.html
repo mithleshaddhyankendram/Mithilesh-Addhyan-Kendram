@@ -1,222 +1,308 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mithilesh Addhyan Kendram</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#0f172a;color:white;}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-background:#0f172a;
-position:sticky;
-top:0;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-font-weight:500;
-}
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(135deg,#1e293b,#0f172a);
-padding:20px;
-}
-
-.hero h1{
-font-size:48px;
-background:linear-gradient(to right,#38bdf8,#3b82f6);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-margin-bottom:20px;
-}
-
-.hero p{
-max-width:600px;
-margin-bottom:30px;
-opacity:0.8;
-}
-
-.btn{
-padding:14px 28px;
-background:#3b82f6;
-color:white;
-border:none;
-border-radius:30px;
-cursor:pointer;
-margin:10px;
-}
-
-section{
-padding:80px 20px;
-text-align:center;
-}
-
-.section-title{
-font-size:32px;
-margin-bottom:40px;
-}
-
-.grid{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:25px;
-}
-
-.card{
-background:rgba(255,255,255,0.05);
-padding:25px;
-border-radius:15px;
-width:300px;
-backdrop-filter:blur(10px);
-}
-
-.card h3{margin-bottom:15px;}
-
-footer{
-background:#020617;
-padding:30px;
-text-align:center;
-}
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25d366;
-color:white;
-padding:15px;
-border-radius:50%;
-font-size:20px;
-text-decoration:none;
-}
-
-.chatbox{
-position:fixed;
-bottom:90px;
-right:20px;
-width:300px;
-background:#1e293b;
-padding:15px;
-border-radius:15px;
-display:none;
-}
-
-.chatbox input{
-width:100%;
-padding:8px;
-margin-top:10px;
-}
-
-.chatbox button{
-margin-top:8px;
-padding:8px;
-background:#3b82f6;
-color:white;
-border:none;
-width:100%;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mithilesh Addhyan Kendram | Intelligent Systems & Global Talent</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tcsBlue: '#002855',     /* Deep Corporate Navy */
+                        tcsLight: '#003B73',    /* Secondary Navy */
+                        makGold: '#D4AF37',     /* Logo Gold Accent */
+                        makGray: '#F3F4F6'      /* Background Gray */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; color: #1f2937; }
+        h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(0, 40, 85, 0.95) 0%, rgba(0, 59, 115, 0.9) 100%), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .tcs-card { transition: all 0.3s ease; border-top: 4px solid transparent; }
+        .tcs-card:hover { border-top-color: #D4AF37; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transform: translateY(-5px); }
+    </style>
 </head>
+<body class="bg-gray-50 antialiased">
 
-<body>
+    <div class="bg-tcsBlue text-white text-[11px] py-2 px-6 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center tracking-wider">
+            <div class="flex gap-6">
+                <span class="flex items-center gap-2"><i data-lucide="map-pin" class="h-3 w-3 text-makGold"></i> 7th Block, Adugodi, Bengaluru 560095</span>
+                <span class="flex items-center gap-2"><i data-lucide="clock" class="h-3 w-3 text-makGold"></i> Mon - Fri: 9:00 AM - 7:00 PM</span>
+            </div>
+            <div class="flex gap-6 font-semibold">
+                <a href="mailto:mithlesh.addhyan.kendram@gmail.com" class="hover:text-makGold transition">mithlesh.addhyan.kendram@gmail.com</a>
+                <span class="text-makGold">|</span>
+                <a href="tel:+917654270051" class="hover:text-makGold transition">+91 7654270051</a>
+            </div>
+        </div>
+    </div>
 
-<header>
-<h2>MAK</h2>
-<nav>
-<a href="#agency">Agency</a>
-<a href="#academy">Academy</a>
-<a href="#ai">AI Lab</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+    <header class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-200">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="./logo.jpg" alt="MAK Logo" class="h-14 w-auto rounded-full border border-gray-100 shadow-sm">
+                <div>
+                    <h1 class="text-lg md:text-xl font-bold text-tcsBlue leading-tight tracking-tight uppercase">Mithilesh Addhyan Kendram</h1>
+                    <p class="text-[9px] font-bold text-gray-500 uppercase tracking-widest hidden sm:block">Global IT Solutions & E-Learning</p>
+                </div>
+            </div>
+            <div class="hidden lg:flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-600">
+                <a href="#about" class="hover:text-tcsBlue transition">About</a>
+                <a href="#services" class="hover:text-tcsBlue transition">Enterprise Services</a>
+                <a href="#training" class="hover:text-tcsBlue transition">Academy</a>
+                <a href="#ai-hub" class="hover:text-tcsBlue transition">AI Lab</a>
+                <a href="https://wa.me/917654270021" target="_blank" class="px-5 py-2 bg-tcsBlue text-white hover:bg-tcsLight transition rounded-sm">Contact Us</a>
+            </div>
+        </nav>
+    </header>
 
-<div class="hero">
-<h1>Build. Learn. Innovate with AI.</h1>
-<p>Tech Agency • Industry-Focused Training • AI Innovation Lab • Vendor Solutions</p>
-<button class="btn">Explore Services</button>
-<button class="btn">Join Academy</button>
-</div>
+    <section class="hero-bg py-24 md:py-32 px-6 text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl">
+                <span class="inline-block py-1 px-3 bg-white/10 border border-white/20 text-makGold text-xs font-bold uppercase tracking-[0.2em] mb-6 backdrop-blur-sm rounded-sm">Est. 2025 | Bangalore, IN</span>
+                <h2 class="text-4xl md:text-6xl font-bold leading-[1.1] mb-6">Building Intelligent Systems. <br><span class="text-makGold">Developing Global-Ready Talent.</span></h2>
+                <p class="text-lg text-gray-300 mb-10 leading-relaxed font-light">
+                    Mithilesh Addhyan Kendram is a modern AI-driven tech agency and industry-focused training platform. We combine technology, education, and innovation to build scalable digital solutions.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#services" class="px-8 py-4 bg-makGold text-tcsBlue font-bold hover:bg-white transition rounded-sm uppercase tracking-wider text-sm">Explore IT Services</a>
+                    <a href="#training" class="px-8 py-4 border border-white/30 font-bold hover:bg-white/10 transition rounded-sm uppercase tracking-wider text-sm">View Training Programs</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="agency">
-<h2 class="section-title">Tech Agency</h2>
-<div class="grid">
-<div class="card">
-<h3>Website Development</h3>
-<p>Modern, scalable and responsive websites.</p>
-</div>
-<div class="card">
-<h3>AI Integration</h3>
-<p>Chatbots and intelligent automation systems.</p>
-</div>
-<div class="card">
-<h3>Vendor Projects</h3>
-<p>Third-party development partnerships.</p>
-</div>
-</div>
-</section>
+    <section id="about" class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold text-tcsBlue mb-4">Our Core Services</h3>
+                <div class="w-16 h-1 bg-makGold mx-auto"></div>
+                <p class="text-gray-500 mt-6 max-w-2xl mx-auto">Comprehensive technology and education services designed to accelerate your career and transform your ideas into reality.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="tcs-card bg-gray-50 p-10 rounded-sm border border-gray-100">
+                    <i data-lucide="layout-panel-left" class="h-10 w-10 text-tcsBlue mb-6"></i>
+                    <h4 class="text-xl font-bold text-tcsBlue mb-4">Website Development</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">Custom, responsive, and high-performance websites built with cutting-edge technologies like Next.js, React, and modern design systems.</p>
+                </div>
+                <div class="tcs-card bg-gray-50 p-10 rounded-sm border border-gray-100">
+                    <i data-lucide="graduation-cap" class="h-10 w-10 text-tcsBlue mb-6"></i>
+                    <h4 class="text-xl font-bold text-tcsBlue mb-4">Internship Training</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">Industry-aligned training programs that bridge the gap between academic knowledge and real-world professional skills for students and freshers.</p>
+                </div>
+                <div class="tcs-card bg-gray-50 p-10 rounded-sm border border-gray-100">
+                    <i data-lucide="cpu" class="h-10 w-10 text-tcsBlue mb-6"></i>
+                    <h4 class="text-xl font-bold text-tcsBlue mb-4">AI Solutions</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">Intelligent automation, machine learning models, and AI-powered tools designed to solve complex business challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="academy">
-<h2 class="section-title">MAK Academy</h2>
-<div class="grid">
-<div class="card">
-<h3>Full Stack Training</h3>
-<p>React, Spring Boot, MySQL with real projects.</p>
-</div>
-<div class="card">
-<h3>Internship Program</h3>
-<p>Hands-on industry training.</p>
-</div>
-<div class="card">
-<h3>Final Year Projects</h3>
-<p>Complete development + explanation support.</p>
-</div>
-</div>
-</section>
+    <section id="services" class="py-20 px-6 bg-tcsBlue text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div class="max-w-2xl">
+                    <h3 class="text-3xl font-bold text-white mb-4">Enterprise IT Capabilities</h3>
+                    <div class="w-16 h-1 bg-makGold"></div>
+                    <p class="text-gray-300 mt-6">Delivering robust infrastructure, software development, and technical consulting to modern enterprises.</p>
+                </div>
+            </div>
 
-<section id="ai">
-<h2 class="section-title">AI Innovation Lab</h2>
-<p>We build AI-powered solutions for students, startups, and institutions.</p>
-</section>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Network Support</div>
+                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">IT Consulting</div>
+                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Cybersecurity</div>
+                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Business Analytics</div>
+                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Web Development</div>
+                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Database Dev</div>
+                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Custom Software</div>
+                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Cloud Management</div>
+                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Cloud Apps</div>
+                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Vendor Solutions</div>
+            </div>
+        </div>
+    </section>
 
-<section id="contact">
-<h2 class="section-title">Contact Us</h2>
-<p>Phone: 7654270021</p>
-</section>
+    <section id="training" class="py-20 px-6 bg-makGray">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-12">
+                <h3 class="text-3xl font-bold text-tcsBlue mb-4">Learn With Us: Popular Courses</h3>
+                <div class="w-16 h-1 bg-makGold mb-6"></div>
+                <p class="text-gray-600 max-w-3xl">Hands-on training programs designed by industry professionals to get you job-ready with the latest technologies. Featuring vocational learning, final year project development, and internships.</p>
+            </div>
 
-<footer>
-<p>© 2026 Mithilesh Addhyan Kendram | Empowering Knowledge Through Technology</p>
-</footer>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-8 border border-gray-200 rounded-sm relative shadow-sm hover:shadow-md transition">
+                    <div class="absolute top-0 right-0 bg-makGold text-tcsBlue text-[10px] font-bold px-3 py-1 uppercase">Popular</div>
+                    <h4 class="text-lg font-bold text-tcsBlue mb-2">Full-Stack Web Development</h4>
+                    <p class="text-xs text-gray-500 mb-4 font-bold uppercase tracking-wider">12 Weeks | Beginner to Adv. | 200+ Students</p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> React / Next.js</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Node.js & MongoDB</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Full Deployment</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 border border-gray-200 rounded-sm relative shadow-sm hover:shadow-md transition">
+                    <h4 class="text-lg font-bold text-tcsBlue mb-2">Python & Machine Learning</h4>
+                    <p class="text-xs text-gray-500 mb-4 font-bold uppercase tracking-wider">10 Weeks | Intermediate | 150+ Students</p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Python Basics</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Pandas & NumPy</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Scikit-learn & TensorFlow</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 border border-gray-200 rounded-sm relative shadow-sm hover:shadow-md transition">
+                    <h4 class="text-lg font-bold text-tcsBlue mb-2">Data Science & Analytics</h4>
+                    <p class="text-xs text-gray-500 mb-4 font-bold uppercase tracking-wider">8 Weeks | Beginner | 100+ Students</p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Statistics & Math</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Data Visualization</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> SQL & Power BI</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 border border-gray-200 rounded-sm relative shadow-sm hover:shadow-md transition">
+                    <div class="absolute top-0 right-0 bg-makGold text-tcsBlue text-[10px] font-bold px-3 py-1 uppercase">Popular</div>
+                    <h4 class="text-lg font-bold text-tcsBlue mb-2">AI & Deep Learning</h4>
+                    <p class="text-xs text-gray-500 mb-4 font-bold uppercase tracking-wider">14 Weeks | Advanced | 80+ Students</p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Neural Networks</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> NLP & Computer Vision</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> LLM Architecture</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 border border-gray-200 rounded-sm relative shadow-sm hover:shadow-md transition">
+                    <h4 class="text-lg font-bold text-tcsBlue mb-2">Mobile App Development</h4>
+                    <p class="text-xs text-gray-500 mb-4 font-bold uppercase tracking-wider">10 Weeks | Intermediate | 120+ Students</p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> React Native & Flutter</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Firebase Integration</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> App Store Deployment</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 border border-gray-200 rounded-sm relative shadow-sm hover:shadow-md transition">
+                    <h4 class="text-lg font-bold text-tcsBlue mb-2">Cyber Security Essentials</h4>
+                    <p class="text-xs text-gray-500 mb-4 font-bold uppercase tracking-wider">8 Weeks | Beg. to Int. | 90+ Students</p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Network Security</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Ethical Hacking</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> OWASP & Pen Testing</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-10 text-center">
+                <a href="https://wa.me/917654270051?text=Hello%20MAK,%20I%20am%20interested%20in%20enrolling%20in%20a%20course." target="_blank" class="inline-flex items-center gap-2 bg-tcsBlue text-white px-8 py-3 font-bold hover:bg-tcsLight transition rounded-sm">
+                    <i data-lucide="message-circle"></i> Inquire via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
 
-<a href="https://wa.me/917654270021" class="whatsapp" target="_blank">💬</a>
+    <section id="ai-hub" class="py-20 px-6 bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-4">
+                <h3 class="text-3xl font-bold text-tcsBlue mb-4">AI Innovation Hub</h3>
+                <div class="w-16 h-1 bg-makGold mb-6"></div>
+                <p class="text-gray-600 mb-6 leading-relaxed">Our dedicated AI lab develops state-of-the-art solutions leveraging machine learning, deep learning, and generative AI to solve real-world problems.</p>
+                <a href="mailto:mithlesh.addhyan.kendram@gmail.com" class="text-tcsBlue font-bold hover:text-makGold transition flex items-center gap-2">Discuss AI Solutions <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+            </div>
+            <div class="lg:col-span-8 grid md:grid-cols-2 gap-6">
+                <div class="p-6 bg-gray-50 border border-gray-100 rounded-sm">
+                    <h5 class="font-bold text-tcsBlue mb-2">Custom Chatbots</h5>
+                    <p class="text-sm text-gray-500">Intelligent conversational AI tailored to your business needs using the latest LLM frameworks.</p>
+                </div>
+                <div class="p-6 bg-gray-50 border border-gray-100 rounded-sm">
+                    <h5 class="font-bold text-tcsBlue mb-2">Computer Vision</h5>
+                    <p class="text-sm text-gray-500">Image recognition, object detection, and visual analysis solutions for automation.</p>
+                </div>
+                <div class="p-6 bg-gray-50 border border-gray-100 rounded-sm">
+                    <h5 class="font-bold text-tcsBlue mb-2">Document AI</h5>
+                    <p class="text-sm text-gray-500">Automated document processing, extraction, and intelligent classification systems.</p>
+                </div>
+                <div class="p-6 bg-gray-50 border border-gray-100 rounded-sm">
+                    <h5 class="font-bold text-tcsBlue mb-2">Speech & NLP</h5>
+                    <p class="text-sm text-gray-500">Natural language processing, speech recognition, and text analytics solutions.</p>
+                </div>
+                <div class="p-6 bg-gray-50 border border-gray-100 rounded-sm">
+                    <h5 class="font-bold text-tcsBlue mb-2">Predictive Analytics</h5>
+                    <p class="text-sm text-gray-500">Data-driven forecasting and predictive models to make smarter business decisions.</p>
+                </div>
+                <div class="p-6 bg-gray-50 border border-gray-100 rounded-sm">
+                    <h5 class="font-bold text-tcsBlue mb-2">AI Automation</h5>
+                    <p class="text-sm text-gray-500">Workflow automation powered by AI to increase efficiency and reduce manual effort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="chatbox" id="chatbox">
-<p><b>MAK AI Assistant</b></p>
-<input type="text" placeholder="Ask something...">
-<button onclick="alert('AI Integration requires backend. This is UI demo.')">Send</button>
-</div>
+    <footer class="bg-[#051120] text-gray-400 py-16 px-6 border-t-[6px] border-makGold">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+            <div>
+                <h2 class="text-2xl font-bold text-white mb-4 tracking-tight uppercase">MAK</h2>
+                <p class="text-sm mb-6 max-w-xs">Building Intelligent Systems. Developing Global-Ready Talent. A modern AI-driven tech agency based in Bangalore.</p>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/917654270051" class="text-gray-400 hover:text-white transition"><i data-lucide="message-square"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Headquarters</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="h-5 w-5 text-makGold flex-shrink-0 mt-0.5"></i>
+                        <span>Mithilesh Addhyan Kendram,<br>7th Block, Adugodi, Bengaluru,<br>Karnataka 560095, IN</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="phone" class="h-5 w-5 text-makGold flex-shrink-0"></i>
+                        <span>+91 7654270051 / 7654270021</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="mail" class="h-5 w-5 text-makGold flex-shrink-0"></i>
+                        <span>mithlesh.addhyan.kendram@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
 
-<script>
-document.querySelector(".whatsapp").addEventListener("dblclick",function(){
-document.getElementById("chatbox").style.display="block";
-});
-</script>
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Operations</h4>
+                <ul class="space-y-3 text-sm mb-6 border-l-2 border-white/10 pl-4">
+                    <li><strong class="text-white">Mon - Fri:</strong> 9:00 AM - 7:00 PM</li>
+                    <li><strong class="text-white">Sat - Sun:</strong> Closed</li>
+                </ul>
+                <p class="text-[10px] uppercase tracking-widest">Industry: E-Learning Providers<br>Company Size: 11-50 employees<br>Founded: 2025</p>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/10 text-center text-xs">
+            <p>&copy; 2026 Mithilesh Addhyan Kendram. All Rights Reserved.</p>
+        </div>
+    </footer>
 
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
-</html>
+</html>v
