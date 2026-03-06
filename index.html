@@ -26,7 +26,7 @@
     </script>
     
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
+    <<style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700&display=swap');
         body { font-family: 'Inter', sans-serif; color: #1f2937; }
         h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; }
@@ -39,6 +39,13 @@
         
         .tcs-card { transition: all 0.3s ease; border-top: 4px solid transparent; }
         .tcs-card:hover { border-top-color: #D4AF37; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transform: translateY(-5px); }
+
+        /* ADD THE NEW ANIMATION HERE */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-reveal { animation: fadeIn 0.8s ease-out forwards; }
     </style>
 </head>
 <body class="bg-gray-50 antialiased">
