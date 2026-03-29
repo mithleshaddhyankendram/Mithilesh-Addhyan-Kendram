@@ -1,315 +1,1449 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mithilesh Addhyan Kendram | Intelligent Systems & Global Talent</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        tcsBlue: '#002855',     /* Deep Corporate Navy */
-                        tcsLight: '#003B73',    /* Secondary Navy */
-                        makGold: '#D4AF37',     /* Logo Gold Accent */
-                        makGray: '#F3F4F6'      /* Background Gray */
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Montserrat', 'sans-serif']
-                    }
-                }
-            }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mithilesh Addhyan Kendram (MAK) — AI Tech Agency & E-Learning Platform</title>
+<meta name="description" content="MAK is Bengaluru’s AI tech agency & e-learning platform. Web development, AI solutions, internship training, and enterprise IT services." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: {
+            DEFAULT: '#002855',
+            900: '#001A3A',
+            800: '#00224B',
+            950: '#00132B'
+          },
+          gold: {
+            DEFAULT: '#D4AF37',
+            600: '#B9932E',
+            500: '#C7A232'
+          }
+        },
+        fontFamily: {
+          heading: ['Montserrat', 'ui-sans-serif', 'system-ui'],
+          body: ['Inter', 'ui-sans-serif', 'system-ui']
+        },
+        boxShadow: {
+          'soft': '0 10px 30px rgba(0,0,0,0.25)',
+          'glow': '0 0 25px rgba(212,175,55,0.35)'
+        },
+        keyframes: {
+          fadeInUp: {
+            '0%': { opacity: 0, transform: 'translateY(12px)' },
+            '100%': { opacity: 1, transform: 'translateY(0)' }
+          },
+          float: {
+            '0%, 100%': { transform: 'translateY(0)' },
+            '50%': { transform: 'translateY(-8px)' }
+          }
+        },
+        animation: {
+          fadeInUp: 'fadeInUp 700ms cubic-bezier(.2,.8,.2,1) both',
+          float: 'float 6s ease-in-out infinite'
         }
-    </script>
-    
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <<style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; color: #1f2937; }
-        h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; }
-        
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(0, 40, 85, 0.95) 0%, rgba(0, 59, 115, 0.9) 100%), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .tcs-card { transition: all 0.3s ease; border-top: 4px solid transparent; }
-        .tcs-card:hover { border-top-color: #D4AF37; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transform: translateY(-5px); }
-
-        /* ADD THE NEW ANIMATION HERE */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-reveal { animation: fadeIn 0.8s ease-out forwards; }
-    </style>
+      }
+    }
+  }
+</script>
+<style>
+  :root { color-scheme: dark; }
+  html { scroll-behavior: smooth; }
+  .font-heading { font-family: Montserrat, ui-sans-serif, system-ui; }
+  .font-body { font-family: Inter, ui-sans-serif, system-ui; }
+  .glass {
+    backdrop-filter: saturate(140%) blur(10px);
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .golden-gradient {
+    background: linear-gradient(120deg, #D4AF37, #B9932E 40%, #C7A232 70%, #D4AF37);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .ring-gold { box-shadow: 0 0 0 1px rgba(212,175,55,0.35), 0 8px 30px rgba(0,0,0,0.35); }
+  .card-lift { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .card-lift:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.35); border-color: rgba(212,175,55,0.6); }
+  .link-underline {
+    background-image: linear-gradient(#D4AF37,#D4AF37);
+    background-size: 0% 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .3s ease;
+  }
+  .link-underline:hover { background-size: 100% 2px; }
+  .nav-scrolled {
+    background: rgba(0,40,85,0.7);
+    backdrop-filter: saturate(160%) blur(12px);
+    border-bottom: 1px solid rgba(212,175,55,0.25);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fadeInUp, .animate-float { animation: none !important; }
+  }
+</style>
 </head>
-<body class="bg-gray-50 antialiased">
-
-    <div class="bg-tcsBlue text-white text-[11px] py-2 px-6 hidden md:block">
-        <div class="max-w-7xl mx-auto flex justify-between items-center tracking-wider">
-            <div class="flex gap-6">
-                <span class="flex items-center gap-2"><i data-lucide="map-pin" class="h-3 w-3 text-makGold"></i> 7th Block, Adugodi, Bengaluru 560095</span>
-                <span class="flex items-center gap-2"><i data-lucide="clock" class="h-3 w-3 text-makGold"></i> Mon - Fri: 9:00 AM - 7:00 PM</span>
-            </div>
-            <div class="flex gap-6 font-semibold">
-                <a href="mailto:mithlesh.addhyan.kendram@gmail.com" class="hover:text-makGold transition">mithlesh.addhyan.kendram@gmail.com</a>
-                <span class="text-makGold">|</span>
-                <a href="tel:+917654270051" class="hover:text-makGold transition">+91 7654270051</a>
-            </div>
+<body class="bg-navy-950 text-white font-body selection:bg-gold/20 selection:text-white antialiased">
+<!-- Topbar -->
+<div class="w-full border-b border-white/10 bg-navy-900/60">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 py-2 text-[13px] text-white/80">
+      <div class="flex flex-wrap items-center gap-4">
+        <div class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-gold"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Indiranagar, Bengaluru, Karnataka 560038, India</span>
         </div>
+        <div class="hidden md:flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-gold"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2M22 12a10 10 0 11-20 0 10 10 0 0120 0z"/></svg>
+          <span>Mon–Sat: 10:00 AM – 7:00 PM</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="mailto:hello@mak.ai" class="flex items-center gap-2 hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-gold"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75M21.75 6.75L12 13.5 2.25 6.75"/></svg>
+          <span>hello@mak.ai</span>
+        </a>
+        <a href="tel:+919999988888" class="flex items-center gap-2 hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-4 w-4 text-gold"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.96.73l1.07 3.2a1 1 0 01-.27 1L7.5 9.5a11.05 11.05 0 005 5l1.37-1.37a1 1 0 011 .27l3.2 1.07a1 1 0 01.73.96V19a2 2 0 01-2 2A16 16 0 013 5z"/></svg>
+          <span>+91 99999 88888</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<header id="site-header" class="sticky top-0 z-50 w-full bg-navy-900/40 border-b border-white/10">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3">
+        <div class="relative h-9 w-9 overflow-hidden rounded-2xl ring-1 ring-gold/40 bg-gradient-to-b from-gold/25 to-transparent grid place-items-center shadow-glow">
+          <span class="font-heading text-sm tracking-widest text-gold">MAK</span>
+        </div>
+        <div class="leading-tight">
+          <div class="font-heading text-[15px] font-extrabold tracking-wide">MITHILESH ADDHYAN KENDRAM</div>
+          <div class="text-[11px] uppercase tracking-[0.22em] text-white/70">AI Tech Agency • E-Learning</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-7 text-sm">
+        <a href="#services" class="text-white/90 hover:text-white link-underline">Services</a>
+        <a href="#enterprise" class="text-white/90 hover:text-white link-underline">Enterprise IT</a>
+        <a href="#courses" class="text-white/90 hover:text-white link-underline">Training</a>
+        <a href="#aihub" class="text-white/90 hover:text-white link-underline">AI Hub</a>
+        <a href="#contact" class="text-white/90 hover:text-white link-underline">Contact</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/919999988888?text=Hi%20MAK%2C%20I%27m%20interested%20in%20your%20services."
+           target="_blank" rel="noopener"
+           class="hidden sm:inline-flex items-center gap-2 rounded-2xl border border-gold/40 bg-gold/10 px-4 py-2 text-sm font-semibold text-gold hover:bg-gold/15 hover:border-gold/60 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.1 1.52 5.84L0 24l6.34-1.66A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 21.6a9.6 9.6 0 01-4.9-1.34l-.35-.21-3.76.99.99-3.66-.23-.36A9.56 9.56 0 012.4 12c0-5.3 4.3-9.6 9.6-9.6s9.6 4.3 9.6 9.6-4.3 9.6-9.6 9.6zm5.2-7.2c-.28-.14-1.65-.81-1.9-.9-.25-.1-.43-.14-.6.14-.18.28-.7.9-.86 1.08-.16.2-.32.22-.6.08-.28-.14-1.2-.44-2.28-1.4-.84-.75-1.4-1.68-1.56-1.96-.16-.28-.02-.44.12-.58.12-.12.28-.3.42-.46.14-.16.18-.28.28-.46.1-.2.05-.36-.02-.5-.08-.14-.6-1.44-.82-1.98-.22-.52-.44-.45-.6-.46l-.5-.01c-.18 0-.46.06-.7.32s-.92.9-.92 2.2.94 2.56 1.08 2.74c.14.18 1.84 2.8 4.46 3.92.62.27 1.1.43 1.48.55.62.2 1.2.17 1.66.1.5-.08 1.65-.67 1.88-1.32.23-.64.23-1.2.16-1.32-.08-.12-.25-.18-.53-.32z"/></svg>
+          WhatsApp
+        </a>
+        <button id="mobile-menu-button" class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10">
+          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
     </div>
 
-    <header class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-200">
-        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <img src="./logo.jpg" alt="MAK Logo" class="h-14 w-auto rounded-full border border-gray-100 shadow-sm">
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-white/10">
+      <nav class="flex flex-col gap-1 py-3 text-[15px]">
+        <a href="#services" class="px-2 py-2.5 rounded-xl hover:bg-white/5">Services</a>
+        <a href="#enterprise" class="px-2 py-2.5 rounded-xl hover:bg-white/5">Enterprise IT</a>
+        <a href="#courses" class="px-2 py-2.5 rounded-xl hover:bg-white/5">Training</a>
+        <a href="#aihub" class="px-2 py-2.5 rounded-xl hover:bg-white/5">AI Hub</a>
+        <a href="#contact" class="px-2 py-2.5 rounded-xl hover:bg-white/5">Contact</a>
+        <a href="https://wa.me/919999988888?text=Hi%20MAK%2C%20I%27m%20interested%20in%20your%20services."
+           target="_blank" rel="noopener"
+           class="mt-1 inline-flex items-center justify-center gap-2 rounded-2xl border border-gold/40 bg-gold/10 px-4 py-2.5 text-sm font-semibold text-gold">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.1 1.52 5.84L0 24l6.34-1.66A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 21.6a9.6 9.6 0 01-4.9-1.34l-.35-.21-3.76.99.99-3.66-.23-.36A9.56 9.56 0 012.4 12c0-5.3 4.3-9.6 9.6-9.6s9.6 4.3 9.6 9.6-4.3 9.6-9.6 9.6zm5.2-7.2c-.28-.14-1.65-.81-1.9-.9-.25-.1-.43-.14-.6.14-.18.28-.7.9-.86 1.08-.16.2-.32.22-.6.08-.28-.14-1.2-.44-2.28-1.4-.84-.75-1.4-1.68-1.56-1.96-.16-.28-.02-.44.12-.58.12-.12.28-.3.42-.46.14-.16.18-.28.28-.46.1-.2.05-.36-.02-.5-.08-.14-.6-1.44-.82-1.98-.22-.52-.44-.45-.6-.46l-.5-.01c-.18 0-.46.06-.7.32s-.92.9-.92 2.2.94 2.56 1.08 2.74c.14.18 1.84 2.8 4.46 3.92.62.27 1.1.43 1.48.55.62.2 1.2.17 1.66.1.5-.08 1.65-.67 1.88-1.32.23-.64.23-1.2.16-1.32-.08-.12-.25-.18-.53-.32z"/></svg>
+          WhatsApp
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <!-- Decorative gradients -->
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+    <div class="absolute -top-32 -left-40 h-96 w-96 rounded-full bg-gold/20 blur-3xl"></div>
+    <div class="absolute -bottom-24 -right-32 h-[28rem] w-[28rem] rounded-full bg-gold/10 blur-3xl"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(80rem_40rem_at_10%_10%,rgba(212,175,55,0.08),transparent_60%)]"></div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+    <div class="grid items-center gap-12 py-16 md:py-24 lg:grid-cols-12 lg:py-28">
+      <!-- Left content -->
+      <div class="lg:col-span-7">
+        <div class="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-semibold tracking-wide text-gold">
+          <span class="h-1.5 w-1.5 rounded-full bg-gold animate-pulse"></span>
+          Bengaluru, India • Est. 2022
+        </div>
+
+        <h1 class="mt-5 font-heading text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+          Building <span class="golden-gradient">Intelligent Systems.</span>
+        </h1>
+
+        <p class="mt-4 max-w-2xl text-lg text-white/80">
+          MAK blends enterprise-grade engineering with world-class training. We ship production-ready AI applications, modern web platforms, and upskill teams for the intelligence era.
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#courses" class="inline-flex items-center gap-2 rounded-2xl bg-gold px-5 py-3 text-sm font-extrabold text-navy-950 shadow-glow transition hover:translate-y-[-1px]">
+            Explore Programs
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-6-6l6 6-6 6"/></svg>
+          </a>
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">
+            Book a Consultation
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Trust metrics -->
+        <div class="mt-10 grid grid-cols-3 gap-6 border-t border-white/10 pt-6 text-center">
+          <div>
+            <div class="font-heading text-2xl font-extrabold text-gold">40+</div>
+            <div class="text-xs uppercase tracking-wider text-white/60">Projects Delivered</div>
+          </div>
+          <div>
+            <div class="font-heading text-2xl font-extrabold text-gold">1.2k+</div>
+            <div class="text-xs uppercase tracking-wider text-white/60">Learners Trained</div>
+          </div>
+          <div>
+            <div class="font-heading text-2xl font-extrabold text-gold">24/7</div>
+            <div class="text-xs uppercase tracking-wider text-white/60">Managed Support</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right asymmetric visual -->
+      <div class="relative lg:col-span-5">
+        <div class="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-1.5 shadow-soft ring-gold">
+          <!-- Fake UI / details -->
+          <div class="relative h-full w-full overflow-hidden rounded-[2.2rem] bg-navy-900/70">
+            <!-- Top bar -->
+            <div class="flex items-center justify-between border-b border-white/10 px-4 py-3">
+              <div class="flex items-center gap-2">
+                <span class="inline-block h-2.5 w-2.5 rounded-full bg-red-500"></span>
+                <span class="inline-block h-2.5 w-2.5 rounded-full bg-yellow-500"></span>
+                <span class="inline-block h-2.5 w-2.5 rounded-full bg-green-500"></span>
+              </div>
+              <div class="text-[11px] uppercase tracking-wider text-white/50">MAK • Intelligence Console</div>
+              <div class="h-5 w-16 rounded bg-white/5"></div>
+            </div>
+            <!-- Content -->
+            <div class="p-5">
+              <div class="mb-4">
+                <div class="text-[11px] uppercase tracking-wider text-white/50">Pipeline</div>
+                <div class="mt-2 space-y-2">
+                  <div class="h-9 rounded-xl border border-white/10 bg-white/5 px-3 flex items-center justify-between">
+                    <div class="text-sm">Data Ingestion</div>
+                    <span class="inline-flex h-5 items-center rounded-full bg-gold/15 px-2 text-[10px] font-semibold text-gold border border-gold/30">Live</span>
+                  </div>
+                  <div class="h-9 rounded-xl border border-white/10 bg-white/5 px-3 flex items-center justify-between">
+                    <div class="text-sm">Feature Store</div>
+                    <span class="inline-flex h-5 items-center rounded-full bg-emerald-400/15 px-2 text-[10px] font-semibold text-emerald-300 border border-emerald-400/30">Ready</span>
+                  </div>
+                  <div class="h-9 rounded-xl border border-white/10 bg-white/5 px-3 flex items-center justify-between">
+                    <div class="text-sm">Model Training</div>
+                    <span class="inline-flex h-5 items-center rounded-full bg-sky-400/15 px-2 text-[10px] font-semibold text-sky-300 border border-sky-400/30">Running</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <div class="text-[11px] uppercase tracking-wider text-white/50">Latency</div>
+                  <div class="mt-1 font-heading text-xl font-extrabold">86<span class="text-xs text-white/50">ms</span></div>
+                  <div class="mt-2 h-1.5 w-full rounded-full bg-white/10">
+                    <div class="h-1.5 w-3/4 rounded-full bg-gold"></div>
+                  </div>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <div class="text-[11px] uppercase tracking-wider text-white/50">Uptime</div>
+                  <div class="mt-1 font-heading text-xl font-extrabold">99.96<span class="text-xs text-white/50">%</span></div>
+                  <div class="mt-2 h-1.5 w-full rounded-full bg-white/10">
+                    <div class="h-1.5 w-[92%] rounded-full bg-gold"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 rounded-2xl border border-dashed border-gold/40 bg-gold/5 p-3 text-xs text-gold/90">
+                <strong>MAK AI</strong> — deploy chatbots, computer vision, and analytics with secure, governed workflows.
+              </div>
+            </div>
+
+            <!-- Floating badge -->
+            <div class="absolute -right-6 top-6 rotate-12 rounded-2xl border border-gold/40 bg-navy-900/80 px-3 py-2 text-[11px] font-semibold text-gold shadow-soft animate-float">
+              ISO 27001 Aligned
+            </div>
+          </div>
+        </div>
+
+        <!-- Accent line -->
+        <div class="absolute -left-8 bottom-10 hidden h-px w-40 bg-gradient-to-r from-transparent via-gold/60 to-transparent md:block"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Services -->
+<section id="services" class="relative bg-navy-900/40">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div class="max-w-3xl">
+      <p class="text-xs uppercase tracking-[0.25em] text-gold">What we do</p>
+      <h2 class="mt-2 font-heading text-3xl font-extrabold tracking-tight sm:text-4xl">Core Services</h2>
+      <p class="mt-3 text-white/70">End-to-end product engineering, upskilling, and AI integration delivered with enterprise rigor.</p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <!-- Web Development -->
+      <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 card-lift">
+        <div class="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100">
+          <div class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-gold/15 blur-2xl"></div>
+        </div>
+        <div class="relative">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M5 7v10a2 2 0 002 2h10a2 2 0 002-2V7M8 3v4m8-4v4"/></svg>
+          </div>
+          <h3 class="mt-4 font-heading text-xl font-bold">Web Development</h3>
+          <p class="mt-2 text-sm text-white/70">Production-grade Next.js, Node, and cloud infrastructure. Pixel-perfect UI, performance budgets, and secure CI/CD.</p>
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li class="flex items-center gap-2">
+              <span class="inline-flex h-5 w-5 items-center justify-center rounded-full border border-gold/40 bg-gold/10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              Headless CMS & Commerce
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="inline-flex h-5 w-5 items-center justify-center rounded-full border border-gold/40 bg-gold/10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              Edge rendering & SEO
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="inline-flex h-5 w-5 items-center justify-center rounded-full border border-gold/40 bg-gold/10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              Observability & SRE
+            </li>
+          </ul>
+          <div class="mt-6">
+            <a href="#contact" class="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:underline">Talk to an Architect →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Internship Training -->
+      <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 card-lift">
+        <div class="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100">
+          <div class="absolute -left-20 -bottom-20 h-56 w-56 rounded-full bg-gold/15 blur-2xl"></div>
+        </div>
+        <div class="relative">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v7m0 0l-6-3m6 3l6-3"/></svg>
+          </div>
+          <h3 class="mt-4 font-heading text-xl font-bold">Internship Training</h3>
+          <p class="mt-2 text-sm text-white/70">Cohort-based, mentor-led programs with capstone projects, code reviews, and placement assistance.</p>
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li class="flex items-center gap-2">
+              <span class="inline-flex h-5 w-5 items-center justify-center rounded-full border border-gold/40 bg-gold/10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              Full-stack & Data Tracks
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="inline-flex h-5 w-5 items-center justify-center rounded-full border border-gold/40 bg-gold/10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              Git, CI/CD, Testing
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="inline-flex h-5 w-5 items-center justify-center rounded-full border border-gold/40 bg-gold/10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              Portfolio & Interview Prep
+            </li>
+          </ul>
+          <div class="mt-6">
+            <a href="#courses" class="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:underline">View Curriculum →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- AI Solutions -->
+      <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 card-lift">
+        <div class="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100">
+          <div class="absolute -right-24 -bottom-24 h-64 w-64 rounded-full bg-gold/15 blur-2xl"></div>
+        </div>
+        <div class="relative">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+          </div>
+          <h3 class="mt-4 font-heading text-xl font-bold">AI Solutions</h3>
+          <p class="mt-2 text-sm text-white/70">From POC to production: chatbots, computer vision, analytics, and workflow automation with governance.</p>
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li class="flex items-center gap-2">
+              <span class="inline-flex h-5 w-5 items-center justify-center rounded-full border border-gold/40 bg-gold/10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              RAG & Enterprise Chatbots
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="inline-flex h-5 w-5 items-center justify-center rounded-full border border-gold/40 bg-gold/10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              Vision & OCR Pipelines
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="inline-flex h-5 w-5 items-center justify-center rounded-full border border-gold/40 bg-gold/10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              Analytics & MLOps
+            </li>
+          </ul>
+          <div class="mt-6">
+            <a href="#aihub" class="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:underline">Explore AI Hub →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Enterprise IT -->
+<section id="enterprise" class="relative">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+      <div class="max-w-2xl">
+        <p class="text-xs uppercase tracking-[0.25em] text-gold">Managed & professional services</p>
+        <h2 class="mt-2 font-heading text-3xl font-extrabold tracking-tight sm:text-4xl">Enterprise IT</h2>
+        <p class="mt-3 text-white/70">Resilient networks, hardened security, and cloud operations with clear SLAs and board-ready reporting.</p>
+      </div>
+      <a href="#contact" class="inline-flex items-center gap-2 rounded-2xl border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white hover:bg-white/10">Request a Scoping Call →</a>
+    </div>
+
+    <!-- Pill tags -->
+    <div class="mt-8 flex flex-wrap gap-2.5">
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/90">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        Network Support
+      </span>
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/90">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.54 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Cybersecurity
+      </span>
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/90">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h10a4 4 0 004-4V9a4 4 0 00-4-4H7a4 4 0 00-4 4v6z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10h6M9 14h6"/></svg>
+        Cloud & DevOps
+      </span>
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/90">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V7a2 2 0 00-2-2H6a2 2 0 00-2 2v10a2 2 0 002 2h7"/></svg>
+        Backup & DR
+      </span>
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/90">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2M22 12a10 10 0 11-20 0 10 10 0 0120 0z"/></svg>
+        24×7 NOC
+      </span>
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/90">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6M9 16h6M9 8h6M7 20h10a2 2 0 002-2V6a2 2 0 00-2-2H7a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        Endpoint MDM
+      </span>
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/90">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v7"/></svg>
+        Compliance (ISO, SOC)
+      </span>
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/90">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+        SIEM & SOC
+      </span>
+    </div>
+
+    <!-- Feature strip -->
+    <div class="mt-10 grid gap-4 md:grid-cols-3">
+      <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+        <div class="text-[11px] uppercase tracking-wider text-white/50">Security posture</div>
+        <div class="mt-1 font-heading text-2xl font-extrabold">EDR + XDR</div>
+        <p class="mt-2 text-sm text-white/70">Threat detection with automated containment and forensic timelines.</p>
+      </div>
+      <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+        <div class="text-[11px] uppercase tracking-wider text-white/50">Reliability</div>
+        <div class="mt-1 font-heading text-2xl font-extrabold">99.95% SLA</div>
+        <p class="mt-2 text-sm text-white/70">Multi-AZ deployments with blue/green releases and chaos drills.</p>
+      </div>
+      <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+        <div class="text-[11px] uppercase tracking-wider text-white/50">Cost control</div>
+        <div class="mt-1 font-heading text-2xl font-extrabold">FinOps</div>
+        <p class="mt-2 text-sm text-white/70">Rightsizing, savings plans, and showback/chargeback for teams.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Training Courses -->
+<section id="courses" class="relative bg-navy-900/40">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+      <div class="max-w-2xl">
+        <p class="text-xs uppercase tracking-[0.25em] text-gold">Industry-aligned curriculum</p>
+        <h2 class="mt-2 font-heading text-3xl font-extrabold tracking-tight sm:text-4xl">Training Courses</h2>
+        <p class="mt-3 text-white/70">Cohort-based programs with projects, mentorship, and career support. Data is dynamically rendered from MySQL (see Notes for integration).</p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-white/70">
+        <span class="inline-flex h-2 w-2 rounded-full bg-gold"></span>
+        Seats are limited per cohort
+      </div>
+    </div>
+
+    <!-- COURSE GRID (static demo cards — replace with API data) -->
+    <div id="courses-grid" class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Card 1 -->
+      <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 card-lift" data-course="Full-Stack Web Development with Next.js">
+        <div class="absolute right-4 top-4 z-10">
+          <span class="inline-flex items-center gap-1 rounded-full border border-gold/40 bg-gold/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-gold">Popular</span>
+        </div>
+        <div class="relative">
+          <div class="flex items-center justify-between">
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M5 7v10a2 2 0 002 2h10a2 2 0 002-2V7M8 3v4m8-4v4"/></svg>
+            </div>
+            <div class="text-[11px] uppercase tracking-wider text-white/50">12 Weeks</div>
+          </div>
+          <h3 class="mt-4 font-heading text-lg font-bold">Full-Stack Web Development with Next.js</h3>
+          <p class="mt-1 text-xs text-white/60">Level: Intermediate • SQL • API design • Auth • Deploy</p>
+
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li class="flex gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              App Router, RSC, Server Actions
+            </li>
+            <li class="flex gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Prisma + MySQL (PlanetScale)
+            </li>
+            <li class="flex gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Vercel CI/CD, Edge functions
+            </li>
+          </ul>
+
+          <div class="mt-5 flex items-center justify-between">
+            <div class="text-sm">
+              <span class="text-white/60">Learners</span>
+              <span class="ml-1 font-heading font-bold text-gold">420+</span>
+            </div>
+            <button class="enroll-btn inline-flex items-center gap-2 rounded-2xl bg-gold px-4 py-2 text-xs font-extrabold text-navy-950 shadow-glow transition hover:translate-y-[-1px]">
+              Enroll Now
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-6-6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 card-lift" data-course="Data Engineering & Analytics">
+        <div class="relative">
+          <div class="flex items-center justify-between">
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+            </div>
+            <div class="text-[11px] uppercase tracking-wider text-white/50">10 Weeks</div>
+          </div>
+          <h3 class="mt-4 font-heading text-lg font-bold">Data Engineering & Analytics</h3>
+          <p class="mt-1 text-xs text-white/60">Level: Beginner→Advanced • SQL • Warehousing • BI</p>
+
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li class="flex gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Advanced SQL, window functions</li>
+            <li class="flex gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Data modeling, ETL/ELT</li>
+            <li class="flex gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Dashboards & storytelling</li>
+          </ul>
+
+          <div class="mt-5 flex items-center justify-between">
+            <div class="text-sm"><span class="text-white/60">Learners</span> <span class="ml-1 font-heading font-bold text-gold">310+</span></div>
+            <button class="enroll-btn inline-flex items-center gap-2 rounded-2xl bg-gold px-4 py-2 text-xs font-extrabold text-navy-950 shadow-glow">Enroll Now →</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 card-lift" data-course="Applied AI & LLM Engineering">
+        <div class="absolute right-4 top-4 z-10">
+          <span class="inline-flex items-center gap-1 rounded-full border border-gold/40 bg-gold/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-gold">New</span>
+        </div>
+        <div class="relative">
+          <div class="flex items-center justify-between">
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+            </div>
+            <div class="text-[11px] uppercase tracking-wider text-white/50">8 Weeks</div>
+          </div>
+          <h3 class="mt-4 font-heading text-lg font-bold">Applied AI & LLM Engineering</h3>
+          <p class="mt-1 text-xs text-white/60">Level: Intermediate • RAG • Eval • Safety</p>
+
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>RAG pipelines & vector DBs</li>
+            <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Prompting, evals, guardrails</li>
+            <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Deployment & monitoring</li>
+          </ul>
+
+          <div class="mt-5 flex items-center justify-between">
+            <div class="text-sm"><span class="text-white/60">Learners</span> <span class="ml-1 font-heading font-bold text-gold">260+</span></div>
+            <button class="enroll-btn inline-flex items-center gap-2 rounded-2xl bg-gold px-4 py-2 text-xs font-extrabold text-navy-950 shadow-glow">Enroll Now →</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 card-lift" data-course="Cloud & DevOps with AWS">
+        <div class="relative">
+          <div class="flex items-center justify-between">
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10">
+              <svg class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h10a4 4 0 004-4V9a4 4 0 00-4-4H7a4 4 0 00-4 4v6z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10h6M9 14h6"/></svg>
+            </div>
+            <div class="text-[11px] uppercase tracking-wider text-white/50">9 Weeks</div>
+          </div>
+          <h3 class="mt-4 font-heading text-lg font-bold">Cloud & DevOps with AWS</h3>
+          <p class="mt-1 text-xs text-white/60">Level: All • IaC • CI/CD • Observability</p>
+
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>VPC, IAM, EKS/ECS</li>
+            <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Terraform, GitHub Actions</li>
+            <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>CloudWatch, X-Ray, cost mgmt</li>
+          </ul>
+
+          <div class="mt-5 flex items-center justify-between">
+            <div class="text-sm"><span class="text-white/60">Learners</span> <span class="ml-1 font-heading font-bold text-gold">190+</span></div>
+            <button class="enroll-btn inline-flex items-center gap-2 rounded-2xl bg-gold px-4 py-2 text-xs font-extrabold text-navy-950 shadow-glow">Enroll Now →</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 card-lift" data-course="Cybersecurity Fundamentals">
+        <div class="relative">
+          <div class="flex items-center justify-between">
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10">
+              <svg class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.54 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="text-[11px] uppercase tracking-wider text-white/50">6 Weeks</div>
+          </div>
+          <h3 class="mt-4 font-heading text-lg font-bold">Cybersecurity Fundamentals</h3>
+          <p class="mt-1 text-xs text-white/60">Level: Beginner • NIST • SOC basics</p>
+
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Threat modeling, EDR, SIEM</li>
+            <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>AppSec & secure coding</li>
+            <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Incident response drills</li>
+          </ul>
+
+          <div class="mt-5 flex items-center justify-between">
+            <div class="text-sm"><span class="text-white/60">Learners</span> <span class="ml-1 font-heading font-bold text-gold">210+</span></div>
+            <button class="enroll-btn inline-flex items-center gap-2 rounded-2xl bg-gold px-4 py-2 text-xs font-extrabold text-navy-950 shadow-glow">Enroll Now →</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 card-lift" data-course="Product Analytics with SQL & BI">
+        <div class="relative">
+          <div class="flex items-center justify-between">
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10">
+              <svg class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 19h16M4 15h10M4 11h6M4 7h8M20 5v14"/></svg>
+            </div>
+            <div class="text-[11px] uppercase tracking-wider text-white/50">7 Weeks</div>
+          </div>
+          <h3 class="mt-4 font-heading text-lg font-bold">Product Analytics with SQL & BI</h3>
+          <p class="mt-1 text-xs text-white/60">Level: Beginner→Advanced • Metrics • Dashboards</p>
+
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Funnels, cohorts, retention</li>
+            <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>SQL for analysts, modeling</li>
+            <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Storytelling with data</li>
+          </ul>
+
+          <div class="mt-5 flex items-center justify-between">
+            <div class="text-sm"><span class="text-white/60">Learners</span> <span class="ml-1 font-heading font-bold text-gold">180+</span></div>
+            <button class="enroll-btn inline-flex items-center gap-2 rounded-2xl bg-gold px-4 py-2 text-xs font-extrabold text-navy-950 shadow-glow">Enroll Now →</button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Enroll Modal -->
+    <div id="enroll-modal" class="fixed inset-0 z-[70] hidden">
+      <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+      <div class="relative mx-auto mt-20 w-[min(640px,92vw)] rounded-3xl border border-white/10 bg-navy-900 p-6 shadow-soft">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p class="text-xs uppercase tracking-wider text-gold">Enrollment</p>
+            <h3 id="enroll-title" class="mt-1 font-heading text-xl font-extrabold">Course Name</h3>
+            <p class="mt-1 text-sm text-white/70">Please share your details. We’ll confirm your seat via email/WhatsApp.</p>
+          </div>
+          <button id="enroll-close" class="rounded-xl border border-white/15 bg-white/5 p-2 hover:bg-white/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <form id="enroll-form" class="mt-5 grid gap-4">
+          <input type="hidden" name="courseName" id="enroll-course-hidden" />
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label class="mb-1 block text-xs text-white/70">Full Name</label>
+              <input required name="name" class="w-full rounded-2xl border border-white/15 bg-white/5 px-3 py-2.5 text-sm outline-none placeholder:text-white/30 focus:border-gold/60" placeholder="Riya Sharma" />
+            </div>
+            <div>
+              <label class="mb-1 block text-xs text-white/70">Email</label>
+              <input required type="email" name="email" class="w-full rounded-2xl border border-white/15 bg-white/5 px-3 py-2.5 text-sm outline-none placeholder:text-white/30 focus:border-gold/60" placeholder="you@example.com" />
+            </div>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label class="mb-1 block text-xs text-white/70">Phone</label>
+              <input required name="phone" class="w-full rounded-2xl border border-white/15 bg-white/5 px-3 py-2.5 text-sm outline-none placeholder:text-white/30 focus:border-gold/60" placeholder="+91 9XXXXXXXXX" />
+            </div>
+            <div>
+              <label class="mb-1 block text-xs text-white/70">Preferred Start</label>
+              <select name="start" class="w-full rounded-2xl border border-white/15 bg-white/5 px-3 py-2.5 text-sm outline-none focus:border-gold/60">
+                <option>Next Cohort</option>
+                <option>Within 2 weeks</option>
+                <option>Within 1 month</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mt-2 flex items-center justify-between">
+            <p class="text-[11px] text-white/60">By submitting, you agree to our Terms & Privacy Policy.</p>
+            <button type="submit" class="inline-flex items-center gap-2 rounded-2xl bg-gold px-4 py-2.5 text-sm font-extrabold text-navy-950 shadow-glow">
+              Submit Application
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-6-6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </form>
+
+        <div id="enroll-success" class="mt-4 hidden rounded-2xl border border-emerald-400/30 bg-emerald-400/10 p-3 text-sm text-emerald-200">
+          Thank you! Your enrollment request has been received. Our advisor will contact you within 24 hours.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI Hub -->
+<section id="aihub" class="relative">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div class="max-w-3xl">
+      <p class="text-xs uppercase tracking-[0.25em] text-gold">Production AI, not just demos</p>
+      <h2 class="mt-2 font-heading text-3xl font-extrabold tracking-tight sm:text-4xl">AI Hub</h2>
+      <p class="mt-3 text-white/70">Templates, patterns, and accelerators for rapid, secure delivery of intelligent systems.</p>
+    </div>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Card -->
+      <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 card-lift">
+        <div class="flex items-center justify-between">
+          <div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10">
+            <svg class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h12a2 2 0 012 2z"/></svg>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-white/50">Agents • RAG</span>
+        </div>
+        <h3 class="mt-4 font-heading text-lg font-bold">Chatbots & Assistants</h3>
+        <p class="mt-1 text-sm text-white/70">Domain-aware copilots with retrieval, tools, evals, and safety guardrails.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+          <span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">RAG</span>
+          <span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">Function Calling</span>
+          <span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">Eval Harness</span>
+        </div>
+      </article>
+
+      <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 card-lift">
+        <div class="flex items-center justify-between">
+          <div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10">
+            <svg class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A2 2 0 0021 6v12a2 2 0 01-1.447 1.894L15 18M4 6h8M4 10h8M4 14h6M4 18h6"/></svg>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-white/50">CV • OCR</span>
+        </div>
+        <h3 class="mt-4 font-heading text-lg font-bold">Computer Vision</h3>
+        <p class="mt-1 text-sm text-white/70">Detection, segmentation, OCR, and defect classification with edge-ready pipelines.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-[11px]"><span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">YOLO</span><span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">ONNX</span><span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">Triton</span></div>
+      </article>
+
+      <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 card-lift">
+        <div class="flex items-center justify-between">
+          <div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10">
+            <svg class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h10M4 17h14"/></svg>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-white/50">NLP</span>
+        </div>
+        <h3 class="mt-4 font-heading text-lg font-bold">Natural Language Processing</h3>
+        <p class="mt-1 text-sm text-white/70">NER, classification, summarization, and multilingual pipelines with clear evals.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-[11px]"><span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">Transformers</span><span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">spaCy</span><span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">LangChain</span></div>
+      </article>
+
+      <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 card-lift">
+        <div class="flex items-center justify-between">
+          <div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10">
+            <svg class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3v18h18M7 15l3-3 2 2 4-6"/></svg>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-white/50">Analytics</span>
+        </div>
+        <h3 class="mt-4 font-heading text-lg font-bold">Analytics & Forecasting</h3>
+        <p class="mt-1 text-sm text-white/70">Time series, uplift modeling, and decision support dashboards for measurable ROI.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-[11px]"><span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">Feature Store</span><span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">Prophet</span><span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">Causal</span></div>
+      </article>
+
+      <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 card-lift">
+        <div class="flex items-center justify-between">
+          <div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10">
+            <svg class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5h6m-6 4h6m-6 4h6"/></svg>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-white/50">Automation</span>
+        </div>
+        <h3 class="mt-4 font-heading text-lg font-bold">Process Automation</h3>
+        <p class="mt-1 text-sm text-white/70">Workflow agents, RPA-style automations, and human-in-the-loop safety.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-[11px]"><span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">n8n</span><span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">Airflow</span><span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">Temporal</span></div>
+      </article>
+
+      <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-6 card-lift">
+        <div class="flex items-center justify-between">
+          <div class="flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10">
+            <svg class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20l9-5-9-5-9 5 9 5zM12 2l9 5-9 5-9-5 9-5z"/></svg>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-white/50">Platform</span>
+        </div>
+        <h3 class="mt-4 font-heading text-lg font-bold">Model Ops & Governance</h3>
+        <p class="mt-1 text-sm text-white/70">Registries, lineage, evals, monitoring, and responsible AI by default.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-[11px]"><span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">MLOps</span><span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">DVC</span><span class="rounded-full border border-white/15 bg-white/5 px-2.5 py-1">MLflow</span></div>
+      </article>
+    </div>
+
+    <div class="mt-12 rounded-3xl border border-gold/30 bg-gradient-to-r from-gold/10 via-transparent to-gold/10 p-[1px]">
+      <div class="rounded-3xl bg-navy-900/70 p-6 md:p-8">
+        <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+          <div>
+            <h4 class="font-heading text-xl font-extrabold">Ready to prototype in a week?</h4>
+            <p class="mt-1 text-sm text-white/70">Start with a 5-day AI sprint: success metrics, data plan, and a working demo.</p>
+          </div>
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-2xl bg-gold px-5 py-3 text-sm font-extrabold text-navy-950 shadow-glow">Book an AI Sprint →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="relative bg-navy-900/40">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div class="grid items-start gap-10 lg:grid-cols-2">
+      <!-- Left: Info -->
+      <div>
+        <p class="text-xs uppercase tracking-[0.25em] text-gold">Let’s discuss your goals</p>
+        <h2 class="mt-2 font-heading text-3xl font-extrabold tracking-tight sm:text-4xl">Contact Us</h2>
+        <p class="mt-3 max-w-xl text-white/70">Share your requirements and timelines. Our solutions architect will respond within one business day with a tailored plan.</p>
+
+        <div class="mt-8 grid gap-4">
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
+            <div class="text-[11px] uppercase tracking-wider text-white/50">Bengaluru Office</div>
+            <div class="mt-1 text-sm">Indiranagar, Bengaluru, Karnataka 560038, India</div>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <a href="mailto:hello@mak.ai" class="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 hover:bg-white/10">hello@mak.ai</a>
+              <a href="tel:+919999988888" class="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 hover:bg-white/10">+91 99999 88888</a>
+              <a href="https://wa.me/919999988888" target="_blank" class="rounded-full border border-gold/30 bg-gold/10 px-3 py-1.5 text-gold">WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
+            <div class="text-[11px] uppercase tracking-wider text-white/50">Working Hours</div>
+            <div class="mt-1 text-sm">Monday – Saturday, 10:00 AM – 7:00 PM (IST)</div>
+            <div class="mt-3 text-xs text-white/60">SLA: First response within 24 hours • Critical issues 24×7 on retainer</div>
+          </div>
+
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
+            <div class="text-[11px] uppercase tracking-wider text-white/50">For Partnerships</div>
+            <div class="mt-1 text-sm">partners@mak.ai</div>
+            <div class="mt-2 text-xs text-white/60">Universities, ed-tech, and enterprise alliances.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="relative">
+        <div class="rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-1.5 shadow-soft">
+          <div class="rounded-[1.35rem] bg-navy-900/80 p-6">
+            <form id="contact-form" class="grid gap-4">
+              <div class="grid gap-4 sm:grid-cols-2">
                 <div>
-                    <h1 class="text-lg md:text-xl font-bold text-tcsBlue leading-tight tracking-tight uppercase">Mithilesh Addhyan Kendram</h1>
-                    <p class="text-[9px] font-bold text-gray-500 uppercase tracking-widest hidden sm:block">Global IT Solutions & E-Learning</p>
+                  <label class="mb-1 block text-xs text-white/70">Full Name</label>
+                  <input required name="name" class="w-full rounded-2xl border border-white/15 bg-white/5 px-3 py-2.5 text-sm outline-none placeholder:text-white/30 focus:border-gold/60" placeholder="Ananya Rao" />
                 </div>
-            </div>
-            <div class="hidden lg:flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-600">
-                <a href="#about" class="hover:text-tcsBlue transition">About</a>
-                <a href="#services" class="hover:text-tcsBlue transition">Enterprise Services</a>
-                <a href="#training" class="hover:text-tcsBlue transition">Academy</a>
-                <a href="#ai-hub" class="hover:text-tcsBlue transition">AI Lab</a>
-                <a href="https://wa.me/917654270021" target="_blank" class="px-5 py-2 bg-tcsBlue text-white hover:bg-tcsLight transition rounded-sm">Contact Us</a>
-            </div>
-        </nav>
-    </header>
+                <div>
+                  <label class="mb-1 block text-xs text-white/70">Work Email</label>
+                  <input required type="email" name="email" class="w-full rounded-2xl border border-white/15 bg-white/5 px-3 py-2.5 text-sm outline-none placeholder:text-white/30 focus:border-gold/60" placeholder="you@company.com" />
+                </div>
+              </div>
 
-    <section class="hero-bg py-24 md:py-32 px-6 text-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="max-w-3xl">
-                <span class="inline-block py-1 px-3 bg-white/10 border border-white/20 text-makGold text-xs font-bold uppercase tracking-[0.2em] mb-6 backdrop-blur-sm rounded-sm">Est. 2025 | Bangalore, IN</span>
-                <h2 class="text-4xl md:text-6xl font-bold leading-[1.1] mb-6">Building Intelligent Systems. <br><span class="text-makGold">Developing Global-Ready Talent.</span></h2>
-                <p class="text-lg text-gray-300 mb-10 leading-relaxed font-light">
-                    Mithilesh Addhyan Kendram is a modern AI-driven tech agency and industry-focused training platform. We combine technology, education, and innovation to build scalable digital solutions.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#services" class="px-8 py-4 bg-makGold text-tcsBlue font-bold hover:bg-white transition rounded-sm uppercase tracking-wider text-sm">Explore IT Services</a>
-                    <a href="#training" class="px-8 py-4 border border-white/30 font-bold hover:bg-white/10 transition rounded-sm uppercase tracking-wider text-sm">View Training Programs</a>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label class="mb-1 block text-xs text-white/70">Phone</label>
+                  <input name="phone" class="w-full rounded-2xl border border-white/15 bg-white/5 px-3 py-2.5 text-sm outline-none placeholder:text-white/30 focus:border-gold/60" placeholder="+91 9XXXXXXXXX" />
                 </div>
+                <div>
+                  <label class="mb-1 block text-xs text-white/70">Interested In</label>
+                  <select name="interest" class="w-full rounded-2xl border border-white/15 bg-white/5 px-3 py-2.5 text-sm outline-none focus:border-gold/60">
+                    <option>AI Solutions</option>
+                    <option>Web Development</option>
+                    <option>Internship Training</option>
+                    <option>Enterprise IT</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="mb-1 block text-xs text-white/70">Project / Message</label>
+                <textarea required name="message" rows="5" class="w-full resize-none rounded-2xl border border-white/15 bg-white/5 px-3 py-2.5 text-sm outline-none placeholder:text-white/30 focus:border-gold/60" placeholder="Tell us about goals, constraints, timeline, and budget range (optional)."></textarea>
+              </div>
+
+              <div class="flex items-center justify-between gap-4">
+                <div class="flex items-center gap-2 text-[11px] text-white/60">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.54 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  We respect privacy. No spam.
+                </div>
+                <button type="submit" class="inline-flex items-center gap-2 rounded-2xl bg-gold px-5 py-3 text-sm font-extrabold text-navy-950 shadow-glow">
+                  Send Message
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-6-6l6 6-6 6"/></svg>
+                </button>
+              </div>
+
+              <p class="text-[11px] text-white/50">By submitting, you agree to our Terms & Privacy Policy.</p>
+            </form>
+
+            <!-- Success toast (hidden) -->
+            <div id="contact-toast" class="pointer-events-none absolute right-4 top-4 hidden">
+              <div class="rounded-2xl border border-emerald-400/30 bg-emerald-400/10 p-3 text-sm text-emerald-200 shadow-soft">
+                Message sent! We’ll get back within one business day.
+              </div>
             </div>
+          </div>
         </div>
-    </section>
 
-    <section id="about" class="py-20 px-6 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h3 class="text-3xl font-bold text-tcsBlue mb-4">Our Core Services</h3>
-                <div class="w-16 h-1 bg-makGold mx-auto"></div>
-                <p class="text-gray-500 mt-6 max-w-2xl mx-auto">Comprehensive technology and education services designed to accelerate your career and transform your ideas into reality.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="tcs-card bg-gray-50 p-10 rounded-sm border border-gray-100">
-                    <i data-lucide="layout-panel-left" class="h-10 w-10 text-tcsBlue mb-6"></i>
-                    <h4 class="text-xl font-bold text-tcsBlue mb-4">Website Development</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed">Custom, responsive, and high-performance websites built with cutting-edge technologies like Next.js, React, and modern design systems.</p>
-                </div>
-                <div class="tcs-card bg-gray-50 p-10 rounded-sm border border-gray-100">
-                    <i data-lucide="graduation-cap" class="h-10 w-10 text-tcsBlue mb-6"></i>
-                    <h4 class="text-xl font-bold text-tcsBlue mb-4">Internship Training</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed">Industry-aligned training programs that bridge the gap between academic knowledge and real-world professional skills for students and freshers.</p>
-                </div>
-                <div class="tcs-card bg-gray-50 p-10 rounded-sm border border-gray-100">
-                    <i data-lucide="cpu" class="h-10 w-10 text-tcsBlue mb-6"></i>
-                    <h4 class="text-xl font-bold text-tcsBlue mb-4">AI Solutions</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed">Intelligent automation, machine learning models, and AI-powered tools designed to solve complex business challenges.</p>
-                </div>
-            </div>
+        <!-- Decor -->
+        <div aria-hidden="true" class="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gold/15 blur-2xl"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="relative border-t border-white/10 bg-navy-900/60">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid gap-10 md:grid-cols-3">
+      <!-- Brand -->
+      <div>
+        <a href="#" class="flex items-center gap-3">
+          <div class="relative h-9 w-9 overflow-hidden rounded-2xl ring-1 ring-gold/40 bg-gradient-to-b from-gold/25 to-transparent grid place-items-center shadow-glow">
+            <span class="font-heading text-sm tracking-widest text-gold">MAK</span>
+          </div>
+          <div class="leading-tight">
+            <div class="font-heading text-[15px] font-extrabold tracking-wide">MITHILESH ADDHYAN KENDRAM</div>
+            <div class="text-[11px] uppercase tracking-[0.22em] text-white/70">AI Tech Agency • E-Learning</div>
+          </div>
+        </a>
+        <p class="mt-4 max-w-sm text-sm text-white/70">
+          Engineering intelligence into every product. From strategy to deployment, we help teams build durable advantage with AI and data.
+        </p>
+        <div class="mt-5 flex items-center gap-3">
+          <a href="#" class="group inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10">
+            <svg class="h-4 w-4 text-white/80 group-hover:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12A10 10 0 1 1 12 2a10 10 0 0 1 10 10Zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0Zm-8.5-3a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM7 17h10v-1.5a3.5 3.5 0 0 0-7 0V17Z"/></svg>
+          </a>
+          <a href="#" class="group inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10">
+            <svg class="h-4 w-4 text-white/80 group-hover:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M22.23 4.62a9.8 9.8 0 0 1-2.83.78A4.92 4.92 0 0 0 21.55 2.7a9.86 9.86 0 0 1-3.12 1.2A4.91 4.91 0 0 0 9.92 8.4a13.94 13.94 0 0 1-10.1-5.13 4.9 4.9 0 0 0 1.52 6.54 4.86 4.86 0 0 1-2.22-.61v.06a4.9 4.9 0 0 0 3.94 4.8 4.92 4.92 0 0 1-2.21.08 4.91 4.91 0 0 0 4.58 3.4A9.86 9.86 0 0 1 2 19.54 13.9 13.9 0 0 0 9.55 22c7.14 0 11.06-5.91 11.06-11.06l-.01-.5A7.93 7.93 0 0 0 22.23 4.6Z"/></svg>
+          </a>
+          <a href="#" class="group inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10">
+            <svg class="h-4 w-4 text-white/80 group-hover:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 6.32 17.8l.93 3.4 3.3-1-1-3.29A10 10 0 0 0 12 2Zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm-1.85 5.2h1.2l1.06 2.06L13.5 7.2h1.15l-1.9 3.43L14.7 14h-1.2l-1.07-2.06L11.35 14H10.2l1.95-3.37L10.15 7.2Z"/></svg>
+          </a>
+          <a href="https://wa.me/919999988888" target="_blank" class="group inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10 hover:bg-gold/15">
+            <svg class="h-4 w-4 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.1 1.52 5.84L0 24l6.34-1.66A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 21.6a9.6 9.6 0 01-4.9-1.34l-.35-.21-3.76.99.99-3.66-.23-.36A9.56 9.56 0 012.4 12c0-5.3 4.3-9.6 9.6-9.6s9.6 4.3 9.6 9.6-4.3 9.6-9.6 9.6zm5.2-7.2c-.28-.14-1.65-.81-1.9-.9-.25-.1-.43-.14-.6.14-.18.28-.7.9-.86 1.08-.16.2-.32.22-.6.08-.28-.14-1.2-.44-2.28-1.4-.84-.75-1.4-1.68-1.56-1.96-.16-.28-.02-.44.12-.58.12-.12.28-.3.42-.46.14-.16.18-.28.28-.46.1-.2.05-.36-.02-.5-.08-.14-.6-1.44-.82-1.98-.22-.52-.44-.45-.6-.46l-.5-.01c-.18 0-.46.06-.7.32s-.92.9-.92 2.2.94 2.56 1.08 2.74c.14.18 1.84 2.8 4.46 3.92.62.27 1.1.43 1.48.55.62.2 1.2.17 1.66.1.5-.08 1.65-.67 1.88-1.32.23-.64.23-1.2.16-1.32-.08-.12-.25-.18-.53-.32z"/></svg>
+          </a>
         </div>
-    </section>
+      </div>
 
-    <section id="services" class="py-20 px-6 bg-tcsBlue text-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
-                <div class="max-w-2xl">
-                    <h3 class="text-3xl font-bold text-white mb-4">Enterprise IT Capabilities</h3>
-                    <div class="w-16 h-1 bg-makGold"></div>
-                    <p class="text-gray-300 mt-6">Delivering robust infrastructure, software development, and technical consulting to modern enterprises.</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Network Support</div>
-                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">IT Consulting</div>
-                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Cybersecurity</div>
-                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Business Analytics</div>
-                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Web Development</div>
-                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Database Dev</div>
-                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Custom Software</div>
-                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Cloud Management</div>
-                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Cloud Apps</div>
-                <div class="bg-white/10 p-4 border border-white/20 rounded-sm text-center hover:bg-makGold hover:text-tcsBlue transition cursor-default font-semibold text-sm">Vendor Solutions</div>
-            </div>
+      <!-- Address -->
+      <div>
+        <h4 class="font-heading text-sm font-bold uppercase tracking-wider text-white/80">Address</h4>
+        <div class="mt-4 space-y-3 text-sm text-white/70">
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <p>Indiranagar, Bengaluru, Karnataka 560038, India</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8.25V18a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18V8.25M21 8.25l-9 6.75L3 8.25M21 8.25V6.75A2.25 2.25 0 0018.75 4.5H5.25A2.25 2.25 0 003 6.75v1.5"/></svg>
+            <p>hello@mak.ai</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.96.73l1.07 3.2a1 1 0 01-.27 1L7.5 9.5a11.05 11.05 0 005 5l1.37-1.37a1 1 0 011 .27l3.2 1.07a1 1 0 01.73.96V19a2 2 0 01-2 2A16 16 0 013 5z"/></svg>
+            <p>+91 99999 88888</p>
+          </div>
         </div>
-    </section>
 
-    <section id="training" class="py-20 px-6 bg-makGray">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-12">
-                <h3 class="text-3xl font-bold text-tcsBlue mb-4">Learn With Us: Popular Courses</h3>
-                <div class="w-16 h-1 bg-makGold mb-6"></div>
-                <p class="text-gray-600 max-w-3xl">Hands-on training programs designed by industry professionals to get you job-ready with the latest technologies. Featuring vocational learning, final year project development, and internships.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white p-8 border border-gray-200 rounded-sm relative shadow-sm hover:shadow-md transition">
-                    <div class="absolute top-0 right-0 bg-makGold text-tcsBlue text-[10px] font-bold px-3 py-1 uppercase">Popular</div>
-                    <h4 class="text-lg font-bold text-tcsBlue mb-2">Full-Stack Web Development</h4>
-                    <p class="text-xs text-gray-500 mb-4 font-bold uppercase tracking-wider">12 Weeks | Beginner to Adv. | 200+ Students</p>
-                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> React / Next.js</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Node.js & MongoDB</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Full Deployment</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-8 border border-gray-200 rounded-sm relative shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-bold text-tcsBlue mb-2">Python & Machine Learning</h4>
-                    <p class="text-xs text-gray-500 mb-4 font-bold uppercase tracking-wider">10 Weeks | Intermediate | 150+ Students</p>
-                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Python Basics</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Pandas & NumPy</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Scikit-learn & TensorFlow</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-8 border border-gray-200 rounded-sm relative shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-bold text-tcsBlue mb-2">Data Science & Analytics</h4>
-                    <p class="text-xs text-gray-500 mb-4 font-bold uppercase tracking-wider">8 Weeks | Beginner | 100+ Students</p>
-                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Statistics & Math</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Data Visualization</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> SQL & Power BI</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-8 border border-gray-200 rounded-sm relative shadow-sm hover:shadow-md transition">
-                    <div class="absolute top-0 right-0 bg-makGold text-tcsBlue text-[10px] font-bold px-3 py-1 uppercase">Popular</div>
-                    <h4 class="text-lg font-bold text-tcsBlue mb-2">AI & Deep Learning</h4>
-                    <p class="text-xs text-gray-500 mb-4 font-bold uppercase tracking-wider">14 Weeks | Advanced | 80+ Students</p>
-                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Neural Networks</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> NLP & Computer Vision</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> LLM Architecture</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-8 border border-gray-200 rounded-sm relative shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-bold text-tcsBlue mb-2">Mobile App Development</h4>
-                    <p class="text-xs text-gray-500 mb-4 font-bold uppercase tracking-wider">10 Weeks | Intermediate | 120+ Students</p>
-                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> React Native & Flutter</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Firebase Integration</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> App Store Deployment</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-8 border border-gray-200 rounded-sm relative shadow-sm hover:shadow-md transition">
-                    <h4 class="text-lg font-bold text-tcsBlue mb-2">Cyber Security Essentials</h4>
-                    <p class="text-xs text-gray-500 mb-4 font-bold uppercase tracking-wider">8 Weeks | Beg. to Int. | 90+ Students</p>
-                    <ul class="text-sm text-gray-600 space-y-2 mb-6">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Network Security</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> Ethical Hacking</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-green-600"></i> OWASP & Pen Testing</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="mt-10 text-center">
-                <a href="https://wa.me/917654270051?text=Hello%20MAK,%20I%20am%20interested%20in%20enrolling%20in%20a%20course." target="_blank" class="inline-flex items-center gap-2 bg-tcsBlue text-white px-8 py-3 font-bold hover:bg-tcsLight transition rounded-sm">
-                    <i data-lucide="message-circle"></i> Inquire via WhatsApp
-                </a>
-            </div>
+        <div class="mt-6">
+          <a href="https://www.google.com/maps/search/Indiranagar,+Bengaluru" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-gold hover:underline">View on Maps →</a>
         </div>
-    </section>
+      </div>
 
-    <section id="ai-hub" class="py-20 px-6 bg-white border-t border-gray-200">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-4">
-                <h3 class="text-3xl font-bold text-tcsBlue mb-4">AI Innovation Hub</h3>
-                <div class="w-16 h-1 bg-makGold mb-6"></div>
-                <p class="text-gray-600 mb-6 leading-relaxed">Our dedicated AI lab develops state-of-the-art solutions leveraging machine learning, deep learning, and generative AI to solve real-world problems.</p>
-                <a href="mailto:mithlesh.addhyan.kendram@gmail.com" class="text-tcsBlue font-bold hover:text-makGold transition flex items-center gap-2">Discuss AI Solutions <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
-            </div>
-            <div class="lg:col-span-8 grid md:grid-cols-2 gap-6">
-                <div class="p-6 bg-gray-50 border border-gray-100 rounded-sm">
-                    <h5 class="font-bold text-tcsBlue mb-2">Custom Chatbots</h5>
-                    <p class="text-sm text-gray-500">Intelligent conversational AI tailored to your business needs using the latest LLM frameworks.</p>
-                </div>
-                <div class="p-6 bg-gray-50 border border-gray-100 rounded-sm">
-                    <h5 class="font-bold text-tcsBlue mb-2">Computer Vision</h5>
-                    <p class="text-sm text-gray-500">Image recognition, object detection, and visual analysis solutions for automation.</p>
-                </div>
-                <div class="p-6 bg-gray-50 border border-gray-100 rounded-sm">
-                    <h5 class="font-bold text-tcsBlue mb-2">Document AI</h5>
-                    <p class="text-sm text-gray-500">Automated document processing, extraction, and intelligent classification systems.</p>
-                </div>
-                <div class="p-6 bg-gray-50 border border-gray-100 rounded-sm">
-                    <h5 class="font-bold text-tcsBlue mb-2">Speech & NLP</h5>
-                    <p class="text-sm text-gray-500">Natural language processing, speech recognition, and text analytics solutions.</p>
-                </div>
-                <div class="p-6 bg-gray-50 border border-gray-100 rounded-sm">
-                    <h5 class="font-bold text-tcsBlue mb-2">Predictive Analytics</h5>
-                    <p class="text-sm text-gray-500">Data-driven forecasting and predictive models to make smarter business decisions.</p>
-                </div>
-                <div class="p-6 bg-gray-50 border border-gray-100 rounded-sm">
-                    <h5 class="font-bold text-tcsBlue mb-2">AI Automation</h5>
-                    <p class="text-sm text-gray-500">Workflow automation powered by AI to increase efficiency and reduce manual effort.</p>
-                </div>
-            </div>
+      <!-- Hours + Quick links -->
+      <div>
+        <h4 class="font-heading text-sm font-bold uppercase tracking-wider text-white/80">Working Hours</h4>
+        <div class="mt-4 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm">
+          <div class="flex items-center justify-between py-1">
+            <span class="text-white/70">Mon – Fri</span>
+            <span class="font-medium">10:00 – 19:00</span>
+          </div>
+          <div class="flex items-center justify-between py-1">
+            <span class="text-white/70">Saturday</span>
+            <span class="font-medium">10:00 – 17:00</span>
+          </div>
+          <div class="flex items-center justify-between py-1">
+            <span class="text-white/70">Sunday</span>
+            <span class="font-medium">Closed</span>
+          </div>
+          <div class="mt-3 text-[11px] text-white/50">IST (Asia/Kolkata)</div>
         </div>
-    </section>
 
-    <footer class="bg-[#051120] text-gray-400 py-16 px-6 border-t-[6px] border-makGold">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
-            <div>
-                <h2 class="text-2xl font-bold text-white mb-4 tracking-tight uppercase">MAK</h2>
-                <p class="text-sm mb-6 max-w-xs">Building Intelligent Systems. Developing Global-Ready Talent. A modern AI-driven tech agency based in Bangalore.</p>
-                <div class="flex gap-4">
-                    <a href="https://wa.me/917654270051" class="text-gray-400 hover:text-white transition"><i data-lucide="message-square"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="linkedin"></i></a>
-                </div>
-            </div>
-            
-            <div>
-                <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Headquarters</h4>
-                <ul class="space-y-4 text-sm">
-                    <li class="flex items-start gap-3">
-                        <i data-lucide="map-pin" class="h-5 w-5 text-makGold flex-shrink-0 mt-0.5"></i>
-                        <span>Mithilesh Addhyan Kendram,<br>7th Block, Adugodi, Bengaluru,<br>Karnataka 560095, IN</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i data-lucide="phone" class="h-5 w-5 text-makGold flex-shrink-0"></i>
-                        <span>+91 7654270051 / 7654270021</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i data-lucide="mail" class="h-5 w-5 text-makGold flex-shrink-0"></i>
-                        <span>mithlesh.addhyan.kendram@gmail.com</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Operations</h4>
-                <ul class="space-y-3 text-sm mb-6 border-l-2 border-white/10 pl-4">
-                    <li><strong class="text-white">Mon - Fri:</strong> 9:00 AM - 7:00 PM</li>
-                    <li><strong class="text-white">Sat - Sun:</strong> Closed</li>
-                </ul>
-                <p class="text-[10px] uppercase tracking-widest">Industry: E-Learning Providers<br>Company Size: 11-50 employees<br>Founded: 2025</p>
-            </div>
+        <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
+          <a href="#services" class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10">Services</a>
+          <a href="#courses" class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10">Training</a>
+          <a href="#aihub" class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10">AI Hub</a>
+          <a href="#contact" class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10">Contact</a>
         </div>
-        
-        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/10 text-center text-xs">
-            <p>&copy; 2026 Mithilesh Addhyan Kendram. All Rights Reserved.</p>
-        </div>
-    </footer>
+      </div>
+    </div>
 
-    <script>
-        lucide.createIcons();
-    </script>
+    <div class="mt-10 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 text-[12px] text-white/60 md:flex-row">
+      <p>© <span id="year"></span> Mithilesh Addhyan Kendram (MAK). All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-white">Privacy Policy</a>
+        <a href="#" class="hover:text-white">Terms</a>
+        <a href="#" class="hover:text-white">Security</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919999988888?text=Hi%20MAK%2C%20I%20need%20help%20with%20AI%20solutions."
+   target="_blank" rel="noopener"
+   class="fixed bottom-5 right-5 z-50 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-gold/40 bg-gold/15 shadow-glow backdrop-blur">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.1 1.52 5.84L0 24l6.34-1.66A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 21.6a9.6 9.6 0 01-4.9-1.34l-.35-.21-3.76.99.99-3.66-.23-.36A9.56 9.56 0 012.4 12c0-5.3 4.3-9.6 9.6-9.6s9.6 4.3 9.6 9.6-4.3 9.6-9.6 9.6zm5.2-7.2c-.28-.14-1.65-.81-1.9-.9-.25-.1-.43-.14-.6.14-.18.28-.7.9-.86 1.08-.16.2-.32.22-.6.08-.28-.14-1.2-.44-2.28-1.4-.84-.75-1.4-1.68-1.56-1.96-.16-.28-.02-.44.12-.58.12-.12.28-.3.42-.46.14-.16.18-.28.28-.46.1-.2.05-.36-.02-.5-.08-.14-.6-1.44-.82-1.98-.22-.52-.44-.45-.6-.46l-.5-.01c-.18 0-.46.06-.7.32s-.92.9-.92 2.2.94 2.56 1.08 2.74c.14.18 1.84 2.8 4.46 3.92.62.27 1.1.43 1.48.55.62.2 1.2.17 1.66.1.5-.08 1.65-.67 1.88-1.32.23-.64.23-1.2.16-1.32-.08-.12-.25-.18-.53-.32z"/></svg>
+</a>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Sticky header state
+  const header = document.getElementById('site-header');
+  const onScroll = () => {
+    if (window.scrollY > 8) header.classList.add('nav-scrolled');
+    else header.classList.remove('nav-scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Mobile menu
+  const menuBtn = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  menuBtn.addEventListener('click', () => {
+    const open = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden', open);
+    menuIcon.classList.toggle('hidden', !open);
+    closeIcon.classList.toggle('hidden', open);
+  });
+
+  // Enroll modal logic
+  const enrollModal = document.getElementById('enroll-modal');
+  const enrollTitle = document.getElementById('enroll-title');
+  const enrollCourseHidden = document.getElementById('enroll-course-hidden');
+  const enrollClose = document.getElementById('enroll-close');
+  const enrollForm = document.getElementById('enroll-form');
+  const enrollSuccess = document.getElementById('enroll-success');
+
+  document.querySelectorAll('.enroll-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const card = e.currentTarget.closest('[data-course]');
+      const course = card ? card.getAttribute('data-course') : 'Course';
+      enrollTitle.textContent = course;
+      enrollCourseHidden.value = course;
+      enrollSuccess.classList.add('hidden');
+      enrollModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeEnroll() {
+    enrollModal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+  enrollClose.addEventListener('click', closeEnroll);
+  enrollModal.addEventListener('click', (e) => { if (e.target === enrollModal) closeEnroll(); });
+
+  enrollForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fd = new FormData(enrollForm);
+    const payload = {
+      name: fd.get('name'),
+      email: fd.get('email'),
+      phone: fd.get('phone'),
+      courseName: fd.get('courseName'),
+      preferredStart: fd.get('start')
+    };
+    // Demo: show success. In real app, POST to /api/enroll
+    // try { await fetch('/api/enroll', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }) } catch {}
+    enrollSuccess.classList.remove('hidden');
+    enrollForm.reset();
+    setTimeout(closeEnroll, 1800);
+  });
+
+  // Contact form (toast)
+  const contactForm = document.getElementById('contact-form');
+  const contactToast = document.getElementById('contact-toast');
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fd = new FormData(contactForm);
+    const payload = {
+      name: fd.get('name'),
+      email: fd.get('email'),
+      phone: fd.get('phone'),
+      interest: fd.get('interest'),
+      message: fd.get('message'),
+    };
+    // Demo: show toast. In real app, POST to /api/contact
+    // try { await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }) } catch {}
+    contactToast.classList.remove('hidden');
+    contactForm.reset();
+    setTimeout(() => contactToast.classList.add('hidden'), 2600);
+  });
+
+  // Simple reveal-on-scroll for sections (fade-in)
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fadeInUp');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('section').forEach(s => io.observe(s));
+</script>
+
+<!--
+================================================================================
+NOTES FOR FULL-STACK NEXT.JS 14 IMPLEMENTATION (Separation of concerns)
+================================================================================
+
+FRONTEND (app/)
+- Use app/layout.js for global metadata, fonts (Montserrat, Inter), and <html> lang.
+- Use Tailwind with a custom theme mirroring this design:
+  - colors: navy: #002855, gold: #D4AF37
+  - fonts: font-heading: Montserrat, font-body: Inter
+  - enable smooth scroll and global fade-in animations.
+
+COMPONENTS
+- Topbar.jsx            : address, hours, email, phone
+- Navbar.jsx            : logo, nav links, WhatsApp button, mobile hamburger
+- Hero.jsx              : asymmetric layout, headline, subcopy, 2 CTAs
+- Services.jsx          : 3 cards (Web Dev, Internship Training, AI Solutions)
+- EnterpriseIT.jsx      : pill tags + 3 feature cards
+- CoursesGrid.jsx       : fetch GET /api/courses → render 6 cards, Enroll Now → open modal
+- EnrollModal.jsx       : form (name, email, phone, courseName) → POST /api/enroll
+- AIHub.jsx             : 6 capability cards
+- ContactSplit.jsx      : contact form POST /api/contact with toast
+- Footer.jsx            : 3 columns, brand, address, hours
+
+DATA LAYER
+- Prisma schema + MySQL (PlanetScale). See /prisma/schema.prisma below.
+
+API ROUTES (app/api/)
+- POST /api/contact   : validate → save ContactSubmission
+- POST /api/enroll    : validate → save CourseEnrollment
+- GET  /api/courses   : return all Course rows
+- GET  /api/leads     : protected by ADMIN_SECRET header; return submissions/enrollments
+
+DEPLOYMENT
+- Vercel: add env vars, connect MySQL, run prisma migrate deploy on build.
+
+================================================================================
+package.json
+================================================================================
+-->
+<script type="application/json" id="package.json">
+{
+  "name": "mak-ai-elearning",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "prisma generate && next build",
+    "start": "next start -p 3000",
+    "lint": "next lint",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "db:migrate": "prisma migrate dev",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.14.0",
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "lucide-react": "^0.400.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8.4.38",
+    "prisma": "^5.14.0",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.4.5"
+  }
+}
+</script>
+
+<!--
+================================================================================
+tailwind.config.js
+================================================================================
+-->
+<script type="application/json" id="tailwind.config.js">
+{
+  "content": [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}"
+  ],
+  "theme": {
+    "extend": {
+      "colors": {
+        "navy": {
+          "DEFAULT": "#002855",
+          "900": "#001A3A",
+          "800": "#00224B",
+          "950": "#00132B"
+        },
+        "gold": {
+          "DEFAULT": "#D4AF37",
+          "600": "#B9932E",
+          "500": "#C7A232"
+        }
+      },
+      "fontFamily": {
+        "heading": ["Montserrat", "ui-sans-serif", "system-ui"],
+        "body": ["Inter", "ui-sans-serif", "system-ui"]
+      },
+      "boxShadow": {
+        "soft": "0 10px 30px rgba(0,0,0,0.25)",
+        "glow": "0 0 25px rgba(212,175,55,0.35)"
+      }
+    }
+  },
+  "plugins": []
+}
+</script>
+
+<!--
+================================================================================
+next.config.js
+================================================================================
+-->
+<script type="application/json" id="next.config.js">
+{
+  "experimental": {
+    "serverActions": true
+  },
+  "images": {
+    "remotePatterns": [
+      { "protocol": "https", "hostname": "**" }
+    ]
+  },
+  "eslint": {
+    "ignoreDuringBuilds": true
+  }
+}
+</script>
+
+<!--
+================================================================================
+prisma/schema.prisma
+================================================================================
+-->
+<pre id="prisma/schema.prisma" style="display:none">
+// This file is Prisma schema (not JSON). Keep as .prisma file in your repo.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Course {
+  id        String   @id @default(cuid())
+  title     String
+  duration  String   // e.g., "12 Weeks"
+  level     String   // e.g., "Intermediate"
+  students  Int      @default(0)
+  bullets   String   // JSON stringified array of highlights
+  isPopular Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CourseEnrollment {
+  id         String   @id @default(cuid())
+  name       String
+  email      String
+  phone      String
+  courseName String
+  createdAt  DateTime @default(now())
+}
+
+model ContactSubmission {
+  id        String   @id @default(now())
+  name      String
+  email     String
+  phone     String?
+  message   String
+  createdAt DateTime @default(now())
+}
+</pre>
+
+<!--
+================================================================================
+lib/db.js
+================================================================================
+-->
+<script type="application/json" id="lib/db.js">
+{
+  "code": "import { PrismaClient } from '@prisma/client';\n\nconst globalForPrisma = globalThis;\n\nexport const prisma = globalForPrisma.prisma || new PrismaClient();\n\nif (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;\n"
+}
+</script>
+
+<!--
+================================================================================
+app/api/contact/route.js
+================================================================================
+-->
+<script type="application/json" id="app/api/contact/route.js">
+{
+  "code": "import { NextResponse } from 'next/server';\nimport { z } from 'zod';\nimport { prisma } from '@/lib/db';\n\nconst schema = z.object({\n  name: z.string().min(2),\n  email: z.string().email(),\n  phone: z.string().optional(),\n  message: z.string().min(5)\n});\n\nexport async function POST(req) {\n  try {\n    const json = await req.json();\n    const data = schema.parse(json);\n    const row = await prisma.contactSubmission.create({ data });\n    return NextResponse.json({ ok: true, id: row.id }, { status: 201 });\n  } catch (err) {\n    return NextResponse.json({ ok: false, error: 'Invalid input' }, { status: 400 });\n  }\n}\n"
+}
+</script>
+
+<!--
+================================================================================
+app/api/enroll/route.js
+================================================================================
+-->
+<script type="application/json" id="app/api/enroll/route.js">
+{
+  "code": "import { NextResponse } from 'next/server';\nimport { z } from 'zod';\nimport { prisma } from '@/lib/db';\n\nconst schema = z.object({\n  name: z.string().min(2),\n  email: z.string().email(),\n  phone: z.string().min(7),\n  courseName: z.string().min(2)\n});\n\nexport async function POST(req) {\n  try {\n    const json = await req.json();\n    const data = schema.parse(json);\n    const row = await prisma.courseEnrollment.create({ data });\n    return NextResponse.json({ ok: true, id: row.id }, { status: 201 });\n  } catch (err) {\n    return NextResponse.json({ ok: false, error: 'Invalid input' }, { status: 400 });\n  }\n}\n"
+}
+</script>
+
+<!--
+================================================================================
+app/api/courses/route.js
+================================================================================
+-->
+<script type="application/json" id="app/api/courses/route.js">
+{
+  "code": "import { NextResponse } from 'next/server';\nimport { prisma } from '@/lib/db';\n\nexport const revalidate = 60; // ISR\n\nexport async function GET() {\n  const courses = await prisma.course.findMany({ orderBy: { createdAt: 'desc' } });\n  // Parse bullets back to array\n  const data = courses.map(c => ({\n    ...c,\n    bullets: (() => { try { return JSON.parse(c.bullets); } catch { return []; } })()\n  }));\n  return NextResponse.json({ courses: data });\n}\n"
+}
+</script>
+
+<!--
+================================================================================
+app/api/leads/route.js
+================================================================================
+-->
+<script type="application/json" id="app/api/leads/route.js">
+{
+  "code": "import { NextResponse } from 'next/server';\nimport { prisma } from '@/lib/db';\n\nexport async function GET(req) {\n  const secret = req.headers.get('x-admin-secret');\n  if (!secret || secret !== process.env.ADMIN_SECRET) {\n    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });\n  }\n  const [contacts, enrollments] = await Promise.all([\n    prisma.contactSubmission.findMany({ orderBy: { createdAt: 'desc' }, take: 200 }),\n    prisma.courseEnrollment.findMany({ orderBy: { createdAt: 'desc' }, take: 200 })\n  ]);\n  return NextResponse.json({ contacts, enrollments });\n}\n"
+}
+</script>
+
+<!--
+================================================================================
+.env.local (example)
+================================================================================
+-->
+<pre id=".env.local" style="display:none">
+# PlanetScale / MySQL
+DATABASE_URL="mysql://USER:PASSWORD@HOST/DATABASE?sslaccept=strict"
+
+# Admin protection for /api/leads
+ADMIN_SECRET="replace-with-strong-secret"
+
+# (Optional) Prisma
+PRISMA_CLIENT_ENGINE_TYPE="library"
+</pre>
+
+<!--
+================================================================================
+README.md (short)
+================================================================================
+-->
+<pre id="README.md" style="display:none">
+# Mithilesh Addhyan Kendram (MAK) — AI Tech Agency & E-Learning
+
+Dark navy (#002855) + gold (#D4AF37) luxury theme. Montserrat headings, Inter body.
+
+## Stack
+- Next.js 14 (App Router) + Tailwind CSS
+- Prisma ORM + MySQL (PlanetScale)
+- Lucide icons
+- Deploy on Vercel
+
+## Setup
+1) Copy `.env.local` and set `DATABASE_URL` and `ADMIN_SECRET`.
+2) Install deps: `npm i`
+3) Migrate: `npm run db:push` (or `prisma migrate dev`)
+4) Seed courses (optional) using Prisma Studio: `npm run db:studio`
+5) Dev: `npm run dev`
+
+## API
+- `POST /api/contact` → `{ name, email, phone?, message }`
+- `POST /api/enroll`  → `{ name, email, phone, courseName }`
+- `GET  /api/courses` → list courses
+- `GET  /api/leads`   → header `x-admin-secret: $ADMIN_SECRET`
+
+## Notes
+- Course bullets are stored as JSON string in `Course.bullets`.
+- Replace demo cards in `CoursesGrid` with data from `/api/courses`.
+- Wire forms to the API endpoints shown above.
+</pre>
 </body>
 </html>
