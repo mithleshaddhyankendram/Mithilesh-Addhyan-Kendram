@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json({ limit: "1mb" }));
 const allowedOrigins = (process.env.ALLOWED_ORIGINS || "").split(",").map(s => s.trim()).filter(Boolean);
 app.use(cors({ origin(origin, cb) {
-  if (!origin || allowedOrigins.length === 0 || allowedOrigins.includes(origin)) return cb(null, true);
+  if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
   return cb(new Error("Origin not allowed"));
 }}));
 app.get("/health", (_req, res) => res.json({ ok: true, service: "MAK AI Assistant API" }));
